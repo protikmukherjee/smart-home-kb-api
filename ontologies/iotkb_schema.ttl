@@ -1,0 +1,67 @@
+@prefix ex:   <https://example.org/iotkb#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/iotkb> a owl:Ontology ;
+  rdfs:label "IoT Knowledge Base Schema" ;
+  owl:imports <http://www.w3.org/ns/sosa/> ,
+              <https://example.org/iotkb/align> .   
+# Classes (types of parts)
+ex:Part a owl:Class .
+ex:SensorPart a owl:Class ; rdfs:subClassOf ex:Part .
+ex:ActuatorPart a owl:Class ; rdfs:subClassOf ex:Part .
+ex:ControllerBoard a owl:Class ; rdfs:subClassOf ex:Part .
+ex:Driver a owl:Class ; rdfs:subClassOf ex:Part .
+ex:PowerSupply a owl:Class ; rdfs:subClassOf ex:Part .
+ex:Mechanical a owl:Class ; rdfs:subClassOf ex:Part .
+ex:Tool a owl:Class ; rdfs:subClassOf ex:Part .
+ex:Kit a owl:Class ; rdfs:subClassOf ex:Part .
+ex:Interface a owl:Class .
+ex:SupplierOffer a owl:Class .
+ex:Helper a owl:Class ; rdfs:subClassOf ex:Part .
+
+# Object properties (how things connect)
+ex:observesProperty a owl:ObjectProperty ;
+  rdfs:domain ex:SensorPart ; rdfs:range sosa:ObservableProperty .
+ex:actsOnProperty a owl:ObjectProperty ;
+  rdfs:domain ex:ActuatorPart ; rdfs:range sosa:ActuatableProperty .
+ex:hasInterface a owl:ObjectProperty ;
+  rdfs:domain ex:Part ; rdfs:range ex:Interface .
+ex:hasOffer a owl:ObjectProperty ;
+  rdfs:domain ex:Part ; rdfs:range ex:SupplierOffer .
+ex:supportsInterface a owl:ObjectProperty ;
+  rdfs:domain ex:ControllerBoard ;
+  rdfs:range  ex:Interface .
+  
+# Data properties (facts on parts)
+ex:manufacturer a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:string .
+ex:mpn a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:string .
+ex:vccMin a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:decimal .
+ex:vccMax a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:decimal .
+ex:iActive_mA a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:decimal .
+ex:iIdle_uA a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:decimal .
+ex:sampleRateMax_Hz a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:decimal .
+ex:latency_ms a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:decimal .
+ex:accuracy_pct a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:decimal .
+ex:rangeMin a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:decimal .
+ex:rangeMax a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:decimal .
+ex:units a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:string .
+ex:i2cAddrDefault a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:string .
+ex:i2cAddrRange a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:string .
+ex:spiMaxFreq_MHz a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:decimal .
+ex:uartBaud a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:string .
+ex:datasheetURL a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:anyURI .
+ex:productURL a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:anyURI .
+ex:notes a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:string .
+
+# Supplier offer fields (for future pricing updates)
+ex:unitPrice a owl:DatatypeProperty ; rdfs:domain ex:SupplierOffer ; rdfs:range xsd:decimal .
+ex:currency a owl:DatatypeProperty ; rdfs:domain ex:SupplierOffer ; rdfs:range xsd:string .
+ex:lifecycle a owl:DatatypeProperty ; rdfs:domain ex:SupplierOffer ; rdfs:range xsd:string .
+ex:lastChecked a owl:DatatypeProperty ; rdfs:domain ex:SupplierOffer ; rdfs:range xsd:dateTime .
+
+# NEW: price & currency so we can filter/sort by budget
+ex:offerPrice    a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:decimal .
+ex:priceCurrency a owl:DatatypeProperty ; rdfs:domain ex:Part ; rdfs:range xsd:string  .

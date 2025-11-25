@@ -1,0 +1,88 @@
+Field definitions
+
+manufacturer
+Records the legal or trade name of the producer of the part. Datatype is xsd:string. A single value is expected per row. Values should follow the canonical vendor spelling used in the datasheet. Ontology term is ex:manufacturer with domain ex:Part and range xsd:string.
+
+mpn
+Records the manufacturer part number that uniquely identifies the item within the vendor catalog. Datatype is xsd:string. Preserve vendor formatting. Ontology term is ex:mpn with domain ex:Part and range xsd:string.
+
+part_label
+Provides a human readable label used in figures and user interfaces. Datatype is xsd:string. Prefer stable and concise labels. Mapped to the RDF individual’s display label and available as a literal in the graph.
+
+category
+Declares the coarse class of the part for reasoning and filtering. Datatype is xsd:string. Allowed values are sensor, actuator, controller, power, mechanical, tooling. The CSV to RDF conversion maps this value to an OWL class among ex:SensorPart, ex:ActuatorPart, ex:ControllerBoard, ex:PowerSupply, ex:Mechanical, or the generic ex:Part.
+
+kind
+Captures a subtype within the category for local taxonomy and search. Datatype is xsd:string. One value is expected. The converter emits it as an annotation literal ex:kind on the part individual.
+
+observed_property
+Enumerates the phenomena that a sensor observes. Datatype is a token list encoded as a single string. Tokens are separated by vertical bar or comma. Each token must correspond to a local name in the ex namespace such as distance, temperature, illuminance. The converter materializes each token as an individual of sosa:ObservableProperty and links the part with ex:observesProperty.
+
+actuatable_property
+Enumerates the system attributes that an actuator changes. Datatype is a token list encoded as a single string. Tokens are separated by vertical bar or comma. Each token must correspond to a local name in the ex namespace such as power_state, angular_position. The converter materializes each token as an individual of sosa:ActuatableProperty and links the part with ex:actsOnProperty.
+
+feature_of_interest
+Names the entity or domain that is observed or acted upon, such as room_air, garage_door, or embedded_platform. Datatype is xsd:string. One value is expected. Stored as a literal annotation on the part individual for downstream interpretation relative to SOSA features of interest.
+
+vcc_min
+Specifies the minimum recommended supply voltage in volts. Datatype is xsd:decimal. Constraint is nonnegative. When both bounds are present, vcc_min is less than or equal to vcc_max. Ontology term is ex:vccMin.
+
+vcc_max
+Specifies the maximum recommended supply voltage in volts. Datatype is xsd:decimal. Constraint is nonnegative. When both bounds are present, vcc_max is greater than or equal to vcc_min. Ontology term is ex:vccMax.
+
+i_active_mA
+Specifies typical or maximum active current in milliamperes. Datatype is xsd:decimal. Constraint is nonnegative. Ontology term is ex:iActive_mA.
+
+i_idle_uA
+Specifies typical or maximum idle current in microamperes. Datatype is xsd:decimal. Constraint is nonnegative. Ontology term is ex:iIdle_uA.
+
+iface
+Enumerates electrical or protocol interfaces supported by the part. Datatype is a token list encoded as a single string. Tokens are separated by vertical bar or comma. Allowed tokens include I2C, SPI, UART, ADC, GPIO, GPIO_PWM, GPIO_TRIGGER_ECHO, ONEWIRE, NEOPIXEL, POWER. The converter creates ex:Interface individuals for the tokens and links the part with ex:hasInterface.
+
+i2c_addr_default
+Records the default seven-bit I2C address in hexadecimal form. Datatype is xsd:string. Format is 0xNN. Ontology term is ex:i2cAddrDefault.
+
+i2c_addr_range
+Records the valid seven-bit I2C address range or set of addresses. Datatype is xsd:string. Use a closed interval such as 0x76–0x77 or a comma-separated set. Ontology term is ex:i2cAddrRange.
+
+spi_max_mhz
+Specifies the maximum SPI clock frequency in megahertz. Datatype is xsd:decimal. Constraint is positive when provided. Ontology term is ex:spiMaxFreq_MHz.
+
+uart_baud
+Specifies the supported UART baud rate used in the default operating mode. Datatype is xsd:string. Store the integer value as a string to avoid locale issues. Ontology term is ex:uartBaud.
+
+sample_rate_max_hz
+Specifies the maximum sampling or reporting frequency in hertz. Datatype is xsd:decimal. Constraint is nonnegative. Ontology term is ex:sampleRateMax_Hz.
+
+latency_ms
+Specifies sensing or actuation latency in milliseconds. Datatype is xsd:decimal. Constraint is nonnegative. If the value is end-to-end rather than device internal, annotate this distinction in notes. Ontology term is ex:latency_ms.
+
+accuracy_pct
+Specifies stated accuracy as an absolute percent of full scale. Datatype is xsd:decimal. Constraint is nonnegative. If the vendor uses a different convention, record the vendor value and clarify the convention in notes. Ontology term is ex:accuracy_pct.
+
+range_min
+Specifies the minimum of the valid measurement or actuation range. Datatype is xsd:decimal. Interpreted together with units. Ontology term is ex:rangeMin.
+
+range_max
+Specifies the maximum of the valid measurement or actuation range. Datatype is xsd:decimal. Interpreted together with units. Ontology term is ex:rangeMax.
+
+units
+Provides the unit corresponding to ranges and measurements. Datatype is xsd:string. Prefer QUDT unit strings such as lux, degC, ppm, m, V, A. Leave blank for dimensionless booleans. Ontology term is ex:units. Alignment to QUDT can be asserted in the alignment file if desired.
+
+datasheet_url
+Provides an authoritative technical datasheet or application note. Datatype is xsd:anyURI. Prefer vendor or standards body sources. Ontology term is ex:datasheetURL.
+
+product_url
+Provides a stable product page used for procurement or reference. Datatype is xsd:anyURI. Prefer vendor or major distributor sources. Ontology term is ex:productURL.
+
+offer_price
+Records a unit price for the specific item at the time of entry. Datatype is xsd:decimal. Constraint is nonnegative. Currency is specified separately in currency. Ontology term is ex:offerPrice on ex:Part. If per-supplier modeling is introduced later, this value can migrate to individuals of ex:SupplierOffer.
+
+currency
+Records the ISO 4217 currency code for the price. Datatype is xsd:string. Examples include CAD and USD. Ontology term is ex:priceCurrency.
+
+lifecycle
+Records availability status for procurement and maintenance planning. Datatype is xsd:string. Use controlled values such as active, NRND, EOL, obsolete, prototype. Ontology term is ex:lifecycle.
+
+notes
+Records brief qualifying remarks that aid interpretation of any field. Datatype is xsd:string. Use short factual statements. Ontology term is ex:notes.

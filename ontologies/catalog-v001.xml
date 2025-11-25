@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <!-- Map the schema IRI to the local file in this folder -->
+   <uri id="iotkb-base"  name="https://example.org/iotkb"        uri="iotkb_schema.ttl"/>
+   <uri id="iotkb-align" name="https://example.org/iotkb/align"  uri="iotkb_align.ttl"/>
+</catalog>

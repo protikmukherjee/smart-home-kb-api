@@ -1,0 +1,257 @@
+@prefix ex:   <https://example.org/iotkb#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://example.org/iotkb/parts> a owl:Ontology ;
+  owl:imports <https://example.org/iotkb> .
+
+ex:actuator a sosa:ObservableProperty ; rdfs:label "actuator" .
+ex:current a sosa:ObservableProperty ; rdfs:label "current" .
+ex:distance a sosa:ObservableProperty ; rdfs:label "distance" .
+ex:door_state a sosa:ObservableProperty ; rdfs:label "door_state" .
+ex:illuminance a sosa:ObservableProperty ; rdfs:label "illuminance" .
+ex:mechanical_limit a sosa:ObservableProperty ; rdfs:label "mechanical_limit" .
+ex:motion a sosa:ObservableProperty ; rdfs:label "motion" .
+ex:power a sosa:ObservableProperty ; rdfs:label "power" .
+ex:door_position a sosa:ActuatableProperty ; rdfs:label "door_position" .
+ex:ADC a ex:Interface ; rdfs:label "ADC" .
+ex:GPIO a ex:Interface ; rdfs:label "GPIO" .
+ex:GPIO_TRIGGER_ECHO a ex:Interface ; rdfs:label "GPIO_TRIGGER_ECHO" .
+ex:I2C a ex:Interface ; rdfs:label "I2C" .
+ex:POWER a ex:Interface ; rdfs:label "POWER" .
+ex:SPI a ex:Interface ; rdfs:label "SPI" .
+ex:UART a ex:Interface ; rdfs:label "UART" .
+
+ex:ELEGOO_ESP_WROOM_32_Development_Board_2pcs a ex:ControllerBoard ;
+  rdfs:label "ELEGOO ESP-WROOM-32 Development Board (2pcs)" ;
+  ex:supportsInterface ex:I2C ;
+  ex:supportsInterface ex:SPI ;
+  ex:supportsInterface ex:UART ;
+  ex:supportsInterface ex:ADC ;
+  ex:supportsInterface ex:GPIO ;
+  ex:category "controller" ;
+  ex:kind "controller" ;
+  ex:manufacturer "ELEGOO" ;
+  ex:mpn "ESP-WROOM-32" ;
+  ex:vccMin "3.3"^^xsd:decimal ;
+  ex:vccMax "3.3"^^xsd:decimal ;
+  ex:units "https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf" ;
+  ex:i2cAddrDefault "I2C|SPI|UART|ADC|GPIO" ;
+  ex:datasheetURL "https://www.amazon.ca/ELEGOO-ESP-WROOM-32-Development-Bluetooth-Microcontroller/dp/B0D8T7Z1P5"^^xsd:anyURI ;
+  ex:productURL "19.99"^^xsd:anyURI ;
+  ex:priceCurrency "active" ;
+  ex:lifecycle "ESP32 dev board" .
+
+ex:ELEGOO_MEGA_R3_Board_ATmega2560_USB_Cable a ex:ControllerBoard ;
+  rdfs:label "ELEGOO MEGA R3 Board ATmega2560 + USB Cable" ;
+  ex:supportsInterface ex:I2C ;
+  ex:supportsInterface ex:SPI ;
+  ex:supportsInterface ex:UART ;
+  ex:supportsInterface ex:ADC ;
+  ex:supportsInterface ex:GPIO ;
+  ex:category "controller" ;
+  ex:kind "controller" ;
+  ex:manufacturer "ELEGOO" ;
+  ex:mpn "MEGA 2560 R3" ;
+  ex:vccMin "5"^^xsd:decimal ;
+  ex:vccMax "5"^^xsd:decimal ;
+  ex:i2cAddrDefault "I2C|SPI|UART|ADC|GPIO" ;
+  ex:datasheetURL "https://www.amazon.ca/dp/B01H4ZLZLQ"^^xsd:anyURI ;
+  ex:productURL "27.95"^^xsd:anyURI ;
+  ex:priceCurrency "active" ;
+  ex:lifecycle "ATmega2560-based board" .
+
+ex:Ultrasonic_Sensor_HC_SR04 a ex:SensorPart ;
+  rdfs:label "Ultrasonic Sensor HC-SR04" ;
+  ex:observesProperty ex:distance ;
+  ex:hasInterface     ex:GPIO_TRIGGER_ECHO ;
+  ex:hasInterface     ex:GPIO ;
+  ex:category "sensor" ;
+  ex:kind "sensor" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "HC-SR04" ;
+  ex:vccMin "5"^^xsd:decimal ;
+  ex:vccMax "5"^^xsd:decimal ;
+  ex:iActive_mA "15"^^xsd:decimal ;
+  ex:rangeMin "2"^^xsd:decimal ;
+  ex:rangeMax "400"^^xsd:decimal ;
+  ex:units "cm" ;
+  ex:datasheetURL "https://www.ultralibrarian.com/2024/10/01/hc-sr04-datasheet-analysis-ulc/"^^xsd:anyURI ;
+  ex:productURL "https://www.amazon.ca/HC-SR04-Heightening-Ultrasonic-Integrated-Transmission/dp/B07GZ765W9"^^xsd:anyURI ;
+  ex:priceCurrency "CAD" ;
+  ex:lifecycle "active" ;
+  ex:notes "Trig/Echo timing" .
+
+ex:PIR_Motion_Sensor_HC_SR501 a ex:SensorPart ;
+  rdfs:label "PIR Motion Sensor HC-SR501" ;
+  ex:observesProperty ex:motion ;
+  ex:hasInterface     ex:GPIO ;
+  ex:category "sensor" ;
+  ex:kind "sensor" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "HC-SR501" ;
+  ex:vccMin "4.5"^^xsd:decimal ;
+  ex:vccMax "20"^^xsd:decimal ;
+  ex:productURL "https://www.hestore.hu/prod_getfile.php?id=10688"^^xsd:anyURI ;
+  ex:lifecycle "CAD" ;
+  ex:notes "active" .
+
+ex:INA226_Current_Power_Monitor_Module a ex:SensorPart ;
+  rdfs:label "INA226 Current/Power Monitor Module" ;
+  ex:observesProperty ex:current ;
+  ex:observesProperty ex:power ;
+  ex:hasInterface     ex:I2C ;
+  ex:category "sensor" ;
+  ex:kind "sensor" ;
+  ex:manufacturer "Texas Instruments" ;
+  ex:mpn "INA226" ;
+  ex:vccMin "2.7"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:i2cAddrDefault "0x40" ;
+  ex:i2cAddrRange "0x40–0x4F" ;
+  ex:productURL "https://www.ti.com/lit/ds/symlink/ina226.pdf"^^xsd:anyURI ;
+  ex:lifecycle "CAD" ;
+  ex:notes "active" .
+
+ex:RTC_Module_DS3231 a ex:Part ;
+  rdfs:label "RTC Module DS3231" ;
+  ex:hasInterface     ex:I2C ;
+  ex:category "tooling" ;
+  ex:kind "helper" ;
+  ex:manufacturer "Maxim Integrated" ;
+  ex:mpn "DS3231" ;
+  ex:vccMin "3.3"^^xsd:decimal ;
+  ex:vccMax "5"^^xsd:decimal ;
+  ex:i2cAddrDefault "0x68" ;
+  ex:datasheetURL "https://www.analog.com/media/en/technical-documentation/data-sheets/ds3231.pdf"^^xsd:anyURI ;
+  ex:productURL "https://www.amazon.ca/DS3231-AT24C32-Precision-Memory-Arduino/dp/B0B4BWN8P1"^^xsd:anyURI ;
+  ex:priceCurrency "CAD" ;
+  ex:lifecycle "active" ;
+  ex:notes "High-accuracy RTC" .
+
+ex:Dual_H_Bridge_Motor_Driver_Module_L298N a ex:ActuatorPart ;
+  rdfs:label "Dual H-Bridge Motor Driver Module (L298N)" ;
+  ex:actsOnProperty   ex:door_position ;
+  ex:category "actuator" ;
+  ex:kind "actuator" ;
+  ex:manufacturer "STMicroelectronics" ;
+  ex:mpn "L298N" ;
+  ex:productURL "https://www.st.com/resource/en/datasheet/l298.pdf"^^xsd:anyURI ;
+  ex:lifecycle "CAD" ;
+  ex:notes "active" .
+
+ex:Relay_Module_4_Channel a ex:Part ;
+  rdfs:label "Relay Module (4-Channel" ;
+  ex:observesProperty ex:actuator ;
+  ex:category "5v)" ;
+  ex:kind "actuator" ;
+  ex:manufacturer "Generic" ;
+  ex:vccMax "5"^^xsd:decimal ;
+  ex:iActive_mA "5"^^xsd:decimal ;
+  ex:i2cAddrDefault "GPIO" ;
+  ex:priceCurrency "https://www.amazon.ca/HiLetgo-Channel-Relay-Module-Optocoupler/dp/B00LW15A4W" ;
+  ex:notes "CAD" .
+
+ex:12V_DC_Power_Adapter a ex:PowerSupply ;
+  rdfs:label "12V DC Power Adapter" ;
+  ex:hasInterface     ex:POWER ;
+  ex:category "power" ;
+  ex:kind "power" ;
+  ex:manufacturer "Generic" ;
+  ex:vccMin "12"^^xsd:decimal ;
+  ex:vccMax "12"^^xsd:decimal ;
+  ex:productURL "https://www.amazon.ca/Adapter-100-240V-Transformer-Security-Camera/dp/B0CPMYVLP1"^^xsd:anyURI ;
+  ex:priceCurrency "CAD" ;
+  ex:lifecycle "active" ;
+  ex:notes "Barrel jack" .
+
+ex:5V_DC_Power_Adapter a ex:PowerSupply ;
+  rdfs:label "5V DC Power Adapter" ;
+  ex:hasInterface     ex:POWER ;
+  ex:category "power" ;
+  ex:kind "power" ;
+  ex:manufacturer "Generic" ;
+  ex:vccMin "5"^^xsd:decimal ;
+  ex:vccMax "5"^^xsd:decimal ;
+  ex:productURL "https://www.amazon.ca/TMEZON-100-240V-1-5A-Adapter-5-5x2-1mm/dp/B092M7K7J6"^^xsd:anyURI ;
+  ex:priceCurrency "CAD" ;
+  ex:lifecycle "active" ;
+  ex:notes "5.5x2.1mm" .
+
+ex:Reed_Switch_Door_Sensor a ex:SensorPart ;
+  rdfs:label "Reed Switch Door Sensor" ;
+  ex:observesProperty ex:door_state ;
+  ex:category "sensor" ;
+  ex:kind "sensor" ;
+  ex:manufacturer "Generic" ;
+  ex:productURL "https://www.amazon.ca/Magnetic-Window-Normally-Contacts-Security/dp/B07RV7V9F1"^^xsd:anyURI ;
+  ex:priceCurrency "CAD" ;
+  ex:lifecycle "active" ;
+  ex:notes "Magnetic contact" .
+
+ex:Mechanical_Limit_Switch_Endstop a ex:SensorPart ;
+  rdfs:label "Mechanical Limit Switch Endstop" ;
+  ex:observesProperty ex:mechanical_limit ;
+  ex:category "sensor" ;
+  ex:kind "sensor" ;
+  ex:manufacturer "Generic" ;
+  ex:productURL "https://www.amazon.ca/WOWOONE-Mechanical-Duplicator-Printer-Accessories/dp/B07D1PC5Y4"^^xsd:anyURI ;
+  ex:priceCurrency "CAD" ;
+  ex:lifecycle "active" ;
+  ex:notes "Endstop switch" .
+
+ex:LDR_Module_Photoresistor a ex:SensorPart ;
+  rdfs:label "LDR Module Photoresistor" ;
+  ex:observesProperty ex:illuminance ;
+  ex:category "sensor" ;
+  ex:kind "sensor" ;
+  ex:manufacturer "Generic" ;
+  ex:productURL "https://www.amazon.ca/HiLetgo-Photoresistor-Photoconductive-LYKJ-I045/dp/B01N0LEKSI"^^xsd:anyURI ;
+  ex:priceCurrency "CAD" ;
+  ex:lifecycle "active" ;
+  ex:notes "Analog divider output" .
+
+ex:DC_Motor_with_Gearbox_High_Torque a ex:ActuatorPart ;
+  rdfs:label "DC Motor with Gearbox (High Torque)" ;
+  ex:actsOnProperty   ex:door_position ;
+  ex:category "actuator" ;
+  ex:kind "actuator" ;
+  ex:manufacturer "Generic" ;
+  ex:productURL "https://www.amazon.ca/ZYTD-Cooling-Electric-Reciprocating-Encoder/dp/B07GRJTXQX"^^xsd:anyURI ;
+  ex:priceCurrency "CAD" ;
+  ex:lifecycle "active" ;
+  ex:notes "Use with H-bridge" .
+
+ex:Soldering_Kit a ex:Part ;
+  rdfs:label "Soldering Kit" ;
+  ex:category "tooling" ;
+  ex:kind "helper" ;
+  ex:manufacturer "Generic" ;
+  ex:lifecycle "CAD" ;
+  ex:notes "active" .
+
+ex:Flexible_Plastic_Sheet_Door_Panel a ex:Mechanical ;
+  rdfs:label "Flexible Plastic Sheet (Door Panel)" ;
+  ex:category "mechanical" ;
+  ex:kind "mechanical" ;
+  ex:manufacturer "Polvtor" ;
+  ex:lifecycle "CAD" ;
+  ex:notes "active" .
+
+ex:Elegoo_120pcs_Jumper_Wires_Kit a ex:Part ;
+  rdfs:label "Elegoo 120pcs Jumper Wires Kit" ;
+  ex:category "tooling" ;
+  ex:kind "wiring" ;
+  ex:manufacturer "ELEGOO" ;
+  ex:lifecycle "CAD" ;
+  ex:notes "active" .
+
+ex:Breadboard_830_Point_Solderless_3pcs a ex:Part ;
+  rdfs:label "Breadboard 830-Point Solderless (3pcs)" ;
+  ex:category "tooling" ;
+  ex:kind "helper" ;
+  ex:manufacturer "ELEGOO" ;
+  ex:lifecycle "CAD" ;
+  ex:notes "active" .

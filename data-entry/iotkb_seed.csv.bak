@@ -1,0 +1,101 @@
+# tools/normalize_vocab.py
+import csv, sys, re, pathlib
+
+CANON = ["sensor","actuator","controller","power","mechanical","tooling"]
+
+CATEGORY_CANON = {
+  "sensor":"sensor","sensors":"sensor","sensor_module":"sensor",
+  "actuator":"actuator","actuators":"actuator","driver":"actuator","motor_driver":"actuator","relay_module":"actuator",
+  "controller":"controller","controllerboard":"controller","microcontroller":"controller","board":"controller",
+  "power":"power","powersupply":"power","power_supply":"power","adapter":"power","psu":"power",
+  "mechanical":"mechanical","mechanics":"mechanical","enclosure":"mechanical","panel":"mechanical",
+  "tooling":"tooling","tool":"tooling","tools":"tooling","kit":"tooling","kits":"tooling","accessory":"tooling",
+  "accessories":"tooling","breadboard":"tooling","wiring":"tooling","jumper_wires":"tooling",
+  "resistor_kit":"tooling","led_kit":"tooling","soldering_kit":"tooling","glue":"tooling","screwdriver":"tooling"
+}
+
+HINTS = [
+  (r"\bhc[-_ ]?sr04\b", "sensor"),
+  (r"\bhc[-_ ]?sr501\b|\bmotion\b", "sensor"),
+  (r"\bens160\b|\baht21\b|\btvoc\b|\beco2\b|\bhumidity\b|\btemperature\b", "sensor"),
+  (r"\breed switch\b|\blimit switch\b", "sensor"),
+  (r"\bina226\b|\bcurrent sensor\b", "sensor"),
+  (r"\bservo\b|\bdc motor\b|\bmotor driver\b|\brelay\b|\bbuzzer\b|\bpump\b", "actuator"),
+  (r"\besp32\b|\barduino mega\b|\buno\b|\braspberry pi\b", "controller"),
+  (r"\b5v\b.*\badapter\b|\b12v\b.*\badapter\b|\bpower supply\b|\bregulator\b", "power"),
+  (r"\bpanel\b|\bbracket\b|\bmount\b|\benclosure\b", "mechanical"),
+  (r"\bjumper wires?\b|\bbreadboard\b|\bresistor kit\b|\bled kit\b|\bsolder(ing)? kit\b|\bglue\b|\bscrewdriver", "tooling"),
+]
+
+def slug(s): s=(s or "").strip().lower(); s=re.sub(r"[^a-z0-9]+","_",s); return s.strip("_")
+
+def guess_category(row):
+    raw = slug(row.get("category",""))
+    if raw in CATEGORY_CANON: return CATEGORY_CANON[raw]
+    k = slug(row.get("kind",""))
+    if k in CATEGORY_CANON: return CATEGORY_CANON[k]
+    txt = " ".join([row.get("part_label",""), row.get("notes","")]).lower()
+    for pat, tgt in HINTS:
+        if re.search(pat, txt): return tgt
+    return "tooling"  # safe fallback
+
+def normalize_kind(cat, kind_raw, row):
+    k = slug(kind_raw)
+    if k: return k
+    lbl = (row.get("part_label","") or "").lower()
+    obs = slug(row.get("observed_property",""))
+    if cat=="sensor":
+        if "distance" in obs or "hc-sr04" in lbl: return "distance"
+        if "motion" in obs or "hc-sr501" in lbl or "pir" in lbl: return "motion"
+        if any(x in obs for x in ["eco2","tvoc","temperature","humidity"]): return "environment_multi"
+        if "illuminance" in obs or "light" in obs: return "light"
+        if "door_state" in obs or "contact" in obs or "reed" in lbl or "limit switch" in lbl: return "contact"
+        if "current" in obs or "ina226" in lbl: return "current"
+        if "smoke" in obs or "gas" in lbl: return "gas_smoke"
+        if "flame" in obs or "flame" in lbl: return "flame"
+    if cat=="actuator":
+        if "motor" in lbl and "driver" not in lbl: return "motor_dc"
+        if "servo" in lbl: return "motor_servo"
+        if "driver" in lbl or "l298n" in lbl: return "motor_driver"
+        if "relay" in lbl: return "relay_module"
+        if "buzzer" in lbl: return "buzzer"
+        if "pump" in lbl: return "pump"
+        if "led" in lbl: return "led"
+    if cat=="controller":
+        if "esp32" in lbl: return "esp32"
+        if "arduino mega" in lbl or "mega" in lbl: return "arduino_mega"
+    if cat=="power":
+        if "12v" in lbl and "adapter" in lbl: return "dc_12v_adapter"
+        if "5v" in lbl and "adapter" in lbl: return "dc_5v_adapter"
+        if "regulator" in lbl: return "regulator"
+    if cat=="mechanical":
+        if "panel" in lbl: return "door_panel"
+        if "bracket" in lbl or "mount" in lbl: return "mount_bracket"
+        if "enclosure" in lbl: return "enclosure"
+    if cat=="tooling":
+        if "jumper" in lbl: return "jumper_wires"
+        if "breadboard" in lbl: return "breadboard"
+        if "resistor kit" in lbl: return "resistor_kit"
+        if "led kit" in lbl: return "led_kit"
+        if "solder" in lbl: return "soldering_kit"
+        if "screw" in lbl: return "screwdriver_set"
+        if "glue" in lbl: return "glue"
+    return k
+
+def main(inp, outp):
+    rows=[]
+    with open(inp, newline="", encoding="utf-8") as f:
+        r=csv.DictReader(f); hdr=r.fieldnames or []
+        for row in r:
+            cat = guess_category(row)
+            kind = normalize_kind(cat, row.get("kind",""), row)
+            row["category"]=cat; row["kind"]=kind
+            rows.append(row)
+    with open(outp, "w", newline="", encoding="utf-8") as f:
+        w=csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+        w.writeheader(); w.writerows(rows)
+
+if __name__=="__main__":
+    if len(sys.argv)!=3:
+        print("Usage: python3 tools/normalize_vocab.py data-entry/iotkb_seed.csv data-entry/iotkb_seed_clean.csv"); sys.exit(1)
+    main(sys.argv[1], sys.argv[2])

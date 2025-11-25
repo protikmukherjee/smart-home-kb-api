@@ -1,0 +1,46 @@
+@prefix ex:   <https://example.org/iotkb#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix saref:<https://saref.etsi.org/core/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix qk:   <http://qudt.org/vocab/quantitykind/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://example.org/iotkb/align> a owl:Ontology .
+
+# Light typing hooks for your classes
+ex:SensorPart     rdfs:subClassOf saref:Sensor .
+ex:ActuatorPart   rdfs:subClassOf saref:Actuator .
+ex:ControllerBoard rdfs:subClassOf saref:Device .
+ex:PowerSupply    rdfs:subClassOf saref:Device .
+ex:Mechanical     rdfs:subClassOf saref:Device .
+ex:Interface      rdfs:subClassOf saref:Device .
+
+# Observable and actuatable properties in your KB point to known quantity kinds
+ex:distance       a sosa:ObservableProperty ; skos:closeMatch qk:Length .
+ex:illuminance    a sosa:ObservableProperty ; skos:closeMatch qk:Illuminance .
+ex:temperature    a sosa:ObservableProperty ; skos:closeMatch qk:ThermodynamicTemperature .
+ex:humidity       a sosa:ObservableProperty ; skos:closeMatch qk:RelativeHumidity .
+ex:eCO2           a sosa:ObservableProperty .
+ex:TVOC           a sosa:ObservableProperty .
+ex:smoke          a sosa:ObservableProperty .
+ex:flame_presence a sosa:ObservableProperty .
+ex:motion         a sosa:ObservableProperty .
+
+ex:power_state    a sosa:ActuatableProperty ; skos:closeMatch qk:Power .
+ex:door_position  a sosa:ActuatableProperty .
+ex:acoustic_signal a sosa:ActuatableProperty .
+
+# Soft unit hooks for your numeric specs
+# These are annotations. You still store plain decimals, but the properties carry a canonical unit hint.
+ex:vccMin rdfs:comment "in Volts" .
+ex:vccMax rdfs:comment "in Volts" .
+ex:iActive_mA rdfs:comment "in milliampere" .
+ex:iIdle_uA   rdfs:comment "in microampere" .
+ex:sampleRateMax_Hz rdfs:comment "in Hertz" .
+ex:latency_ms rdfs:comment "in milliseconds" .
+ex:accuracy_pct rdfs:comment "in percent" .
+ex:rangeMin rdfs:comment "see ex:units or ex:unitsIri" .
+ex:rangeMax rdfs:comment "see ex:units or ex:unitsIri" .

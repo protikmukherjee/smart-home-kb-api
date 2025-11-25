@@ -1,0 +1,39 @@
+@prefix sh:  <http://www.w3.org/ns/shacl#> .
+@prefix ex:  <https://example.org/iotkb#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Every SensorPart must have at least one observesProperty
+ex:SensorShape a sh:NodeShape ;
+  sh:targetClass ex:SensorPart ;
+  sh:property [
+    sh:path ex:observesProperty ;
+    sh:minCount 1 ;
+    sh:message "SensorPart must have at least one ex:observesProperty." ;
+  ] .
+
+# Every ActuatorPart must have at least one actsOnProperty
+ex:ActuatorShape a sh:NodeShape ;
+  sh:targetClass ex:ActuatorPart ;
+  sh:property [
+    sh:path ex:actsOnProperty ;
+    sh:minCount 1 ;
+    sh:message "ActuatorPart must have at least one ex:actsOnProperty." ;
+  ] .
+
+# Every Part should have an interface
+ex:PartInterfaceShape a sh:NodeShape ;
+  sh:targetClass ex:Part ;
+  sh:property [
+    sh:path ex:hasInterface ;
+    sh:minCount 1 ;
+    sh:message "Part should declare at least one ex:hasInterface." ;
+  ] .
+
+# Part must have manufacturer OR mpn (use sh:or)
+ex:PartIdentityShape a sh:NodeShape ;
+  sh:targetClass ex:Part ;
+  sh:or (
+    [ sh:property [ sh:path ex:manufacturer ; sh:minCount 1 ] ]
+    [ sh:property [ sh:path ex:mpn         ; sh:minCount 1 ] ]
+  ) ;
+  sh:message "Part must have ex:manufacturer or ex:mpn." .
