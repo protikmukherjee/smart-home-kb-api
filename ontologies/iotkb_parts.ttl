@@ -5,290 +5,3799 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <https://example.org/iotkb/parts> a owl:Ontology ;
+  rdfs:label "IoT Knowledge Base Parts" ;
   owl:imports <https://example.org/iotkb> .
 
-ex:TVOC a sosa:ObservableProperty ; rdfs:label "TVOC" .
-ex:current a sosa:ObservableProperty ; rdfs:label "current" .
-ex:distance a sosa:ObservableProperty ; rdfs:label "distance" .
-ex:door_state a sosa:ObservableProperty ; rdfs:label "door_state" .
-ex:eCO2 a sosa:ObservableProperty ; rdfs:label "eCO2" .
-ex:flame_presence a sosa:ObservableProperty ; rdfs:label "flame_presence" .
-ex:humidity a sosa:ObservableProperty ; rdfs:label "humidity" .
-ex:illuminance a sosa:ObservableProperty ; rdfs:label "illuminance" .
-ex:mechanical_limit a sosa:ObservableProperty ; rdfs:label "mechanical_limit" .
-ex:motion a sosa:ObservableProperty ; rdfs:label "motion" .
-ex:power a sosa:ObservableProperty ; rdfs:label "power" .
-ex:smoke a sosa:ObservableProperty ; rdfs:label "smoke" .
-ex:temperature a sosa:ObservableProperty ; rdfs:label "temperature" .
-ex:timekeeping a sosa:ObservableProperty ; rdfs:label "timekeeping" .
-ex:acoustic_signal a sosa:ActuatableProperty ; rdfs:label "acoustic_signal" .
-ex:brightness a sosa:ActuatableProperty ; rdfs:label "brightness" .
-ex:door_position a sosa:ActuatableProperty ; rdfs:label "door_position" .
-ex:fluid_flow a sosa:ActuatableProperty ; rdfs:label "fluid_flow" .
-ex:power_state a sosa:ActuatableProperty ; rdfs:label "power_state" .
-ex:ADC a ex:Interface ; rdfs:label "ADC" .
-ex:DRIVEN_BY_DRIVER a ex:Interface ; rdfs:label "DRIVEN_BY_DRIVER" .
-ex:GPIO a ex:Interface ; rdfs:label "GPIO" .
-ex:GPIO_PWM a ex:Interface ; rdfs:label "GPIO_PWM" .
-ex:GPIO_TRIGGER_ECHO a ex:Interface ; rdfs:label "GPIO_TRIGGER_ECHO" .
-ex:I2C a ex:Interface ; rdfs:label "I2C" .
-ex:SPI a ex:Interface ; rdfs:label "SPI" .
-ex:UART a ex:Interface ; rdfs:label "UART" .
+ex:TVOC a sosa:ObservableProperty .
+ex:acceleration a sosa:ObservableProperty .
+ex:angular_velocity a sosa:ObservableProperty .
+ex:color a sosa:ObservableProperty .
+ex:current a sosa:ObservableProperty .
+ex:distance a sosa:ObservableProperty .
+ex:door_state a sosa:ObservableProperty .
+ex:eCO2 a sosa:ObservableProperty .
+ex:flame_presence a sosa:ObservableProperty .
+ex:flow_rate a sosa:ObservableProperty .
+ex:force a sosa:ObservableProperty .
+ex:heart_rate a sosa:ObservableProperty .
+ex:humidity a sosa:ObservableProperty .
+ex:illuminance a sosa:ObservableProperty .
+ex:lpg a sosa:ObservableProperty .
+ex:magnetic_field a sosa:ObservableProperty .
+ex:mechanical_limit a sosa:ObservableProperty .
+ex:metal_presence a sosa:ObservableProperty .
+ex:motion a sosa:ObservableProperty .
+ex:orientation a sosa:ObservableProperty .
+ex:pm10 a sosa:ObservableProperty .
+ex:pm2_5 a sosa:ObservableProperty .
+ex:power a sosa:ObservableProperty .
+ex:pressure a sosa:ObservableProperty .
+ex:propane a sosa:ObservableProperty .
+ex:smoke a sosa:ObservableProperty .
+ex:soil_moisture a sosa:ObservableProperty .
+ex:spo2 a sosa:ObservableProperty .
+ex:temperature a sosa:ObservableProperty .
+ex:timekeeping a sosa:ObservableProperty .
+ex:touch a sosa:ObservableProperty .
+ex:voltage a sosa:ObservableProperty .
+ex:weight a sosa:ObservableProperty .
+ex:acoustic_signal a sosa:ActuatableProperty .
+ex:angular_position a sosa:ActuatableProperty .
+ex:angular_velocity a sosa:ActuatableProperty .
+ex:brightness a sosa:ActuatableProperty .
+ex:color a sosa:ActuatableProperty .
+ex:door_position a sosa:ActuatableProperty .
+ex:fluid_flow a sosa:ActuatableProperty .
+ex:luminous_color a sosa:ActuatableProperty .
+ex:motor_step a sosa:ActuatableProperty .
+ex:motor_velocity a sosa:ActuatableProperty .
+ex:power_state a sosa:ActuatableProperty .
+ex:sound a sosa:ActuatableProperty .
+ex:visual_display a sosa:ActuatableProperty .
+ex:ADC a ex:Interface .
+ex:BLE a ex:Interface .
+ex:CSI a ex:Interface .
+ex:DAC a ex:Interface .
+ex:DRIVEN_BY_DRIVER a ex:Interface .
+ex:Digital a ex:Interface .
+ex:Digital_2_wire a ex:Interface .
+ex:Digital_NPN a ex:Interface .
+ex:Digital_NZR a ex:Interface .
+ex:Digital_Pulse a ex:Interface .
+ex:GPIO a ex:Interface .
+ex:GPIO_Step_Dir a ex:Interface .
+ex:GPIO_TRIGGER_ECHO a ex:Interface .
+ex:HDMI a ex:Interface .
+ex:I2C a ex:Interface .
+ex:I2S a ex:Interface .
+ex:OneWire a ex:Interface .
+ex:POWER_SWITCHED a ex:Interface .
+ex:PWM a ex:Interface .
+ex:SPI a ex:Interface .
+ex:UART a ex:Interface .
+ex:USB a ex:Interface .
+ex:WiFi a ex:Interface .
+ex:air_quality a sosa:FeatureOfInterest .
+ex:alarm_device a sosa:FeatureOfInterest .
+ex:alarm_signal a sosa:FeatureOfInterest .
+ex:ambient_light a sosa:FeatureOfInterest .
+ex:appliance_power a sosa:FeatureOfInterest .
+ex:circuit_power a sosa:FeatureOfInterest .
+ex:dc_motor a sosa:FeatureOfInterest .
+ex:device a sosa:FeatureOfInterest .
+ex:device_motion a sosa:FeatureOfInterest .
+ex:device_orientation a sosa:FeatureOfInterest .
+ex:device_temp a sosa:FeatureOfInterest .
+ex:embedded_platform a sosa:FeatureOfInterest .
+ex:garage_door a sosa:FeatureOfInterest .
+ex:human_finger a sosa:FeatureOfInterest .
+ex:human_presence a sosa:FeatureOfInterest .
+ex:indicator_light a sosa:FeatureOfInterest .
+ex:indoor_air_quality a sosa:FeatureOfInterest .
+ex:linear_axis a sosa:FeatureOfInterest .
+ex:liquid a sosa:FeatureOfInterest .
+ex:liquid_pipe a sosa:FeatureOfInterest .
+ex:load_mass a sosa:FeatureOfInterest .
+ex:magnetic_north a sosa:FeatureOfInterest .
+ex:mechanical_arm a sosa:FeatureOfInterest .
+ex:metal_object a sosa:FeatureOfInterest .
+ex:obstacle_proximity a sosa:FeatureOfInterest .
+ex:pcb a sosa:FeatureOfInterest .
+ex:precision_drive a sosa:FeatureOfInterest .
+ex:robot_wheel a sosa:FeatureOfInterest .
+ex:robotic_joint a sosa:FeatureOfInterest .
+ex:room_air a sosa:FeatureOfInterest .
+ex:soil a sosa:FeatureOfInterest .
+ex:static_info a sosa:FeatureOfInterest .
+ex:stepper_motor a sosa:FeatureOfInterest .
+ex:surface_color a sosa:FeatureOfInterest .
+ex:system_time a sosa:FeatureOfInterest .
+ex:user_input a sosa:FeatureOfInterest .
+ex:user_interface a sosa:FeatureOfInterest .
+ex:visual_indicator a sosa:FeatureOfInterest .
+ex:water_flow a sosa:FeatureOfInterest .
+ex:water_pipe a sosa:FeatureOfInterest .
 
-ex:Infrared_Flame_Sensor_Module a ex:SensorPart ;
-  rdfs:label "Infrared Flame Sensor Module" ;
-  ex:observesProperty ex:flame_presence ;
-  ex:category "sensor" ;
-  ex:kind "flame" ;
-  ex:manufacturer "Generic" ;
-  ex:vccMin "3.3"^^xsd:decimal ;
-  ex:vccMax "5"^^xsd:decimal ;
-  ex:i2cAddrDefault "ADC|DIGITAL" ;
-  ex:notes "Analog + digital comparator; typical Arduino module" .
-
-ex:Gas_Sensor_Module a ex:SensorPart ;
-  rdfs:label "Gas Sensor Module" ;
-  ex:observesProperty ex:smoke ;
-  ex:category "sensor" ;
-  ex:kind "gas_smoke" ;
-  ex:manufacturer "DKARDU" ;
-  ex:vccMin "5"^^xsd:decimal ;
-  ex:vccMax "5"^^xsd:decimal ;
-  ex:i2cAddrDefault "ADC" ;
-  ex:notes "Returns integer 0–360; threshold ~70" .
-
-ex:Passive_Buzzer_3_3_5V a ex:ActuatorPart ;
-  rdfs:label "Passive Buzzer 3.3–5V" ;
-  ex:actsOnProperty   ex:acoustic_signal ;
-  ex:category "actuator" ;
-  ex:kind "buzzer" ;
-  ex:manufacturer "DUTTY" ;
-  ex:vccMin "3.3"^^xsd:decimal ;
-  ex:vccMax "5"^^xsd:decimal ;
-  ex:i2cAddrDefault "GPIO" .
-
-ex:ELEGOO_ESP_WROOM_32_Bluetooth a ex:ControllerBoard ;
-  rdfs:label "ELEGOO ESP-WROOM-32 (Bluetooth)" ;
-  ex:supportsInterface ex:I2C ;
-  ex:supportsInterface ex:SPI ;
-  ex:supportsInterface ex:UART ;
-  ex:supportsInterface ex:ADC ;
-  ex:supportsInterface ex:GPIO ;
-  ex:category "controller" ;
-  ex:kind "esp32" ;
-  ex:manufacturer "ELEGOO" ;
-  ex:mpn "ESP-WROOM-32" ;
-  ex:vccMin "3.3"^^xsd:decimal ;
-  ex:vccMax "3.3"^^xsd:decimal ;
-  ex:i2cAddrDefault "I2C|SPI|UART|ADC|GPIO" ;
-  ex:lifecycle "ESP32 dev board" .
-
-ex:ENS160_eCO2_TVOC_AHT21_Temp_Humidity a ex:SensorPart ;
-  rdfs:label "ENS160 eCO2/TVOC + AHT21 Temp/Humidity" ;
-  ex:observesProperty ex:eCO2 ;
-  ex:observesProperty ex:TVOC ;
-  ex:observesProperty ex:temperature ;
-  ex:observesProperty ex:humidity ;
-  ex:category "sensor" ;
-  ex:kind "environment_multi" ;
-  ex:manufacturer "ENS+ASAIR" ;
-  ex:mpn "ENS160+AHT21" ;
-  ex:vccMin "3.3"^^xsd:decimal ;
-  ex:vccMax "5"^^xsd:decimal ;
-  ex:i2cAddrDefault "I2C" .
-
-ex:Arduino_Mega_2560 a ex:ControllerBoard ;
-  rdfs:label "Arduino Mega 2560" ;
-  ex:supportsInterface ex:I2C ;
-  ex:supportsInterface ex:SPI ;
-  ex:supportsInterface ex:UART ;
-  ex:supportsInterface ex:ADC ;
-  ex:supportsInterface ex:GPIO ;
-  ex:category "controller" ;
-  ex:kind "arduino_mega" ;
-  ex:manufacturer "Arduino" ;
-  ex:mpn "Mega 2560" ;
-  ex:vccMin "5"^^xsd:decimal ;
-  ex:vccMax "5"^^xsd:decimal ;
-  ex:i2cAddrDefault "I2C|SPI|UART|ADC|GPIO" .
-
-ex:Ultrasonic_Sensor_HC_SR04 a ex:SensorPart ;
-  rdfs:label "Ultrasonic Sensor HC-SR04" ;
-  ex:observesProperty ex:distance ;
-  ex:hasInterface     ex:GPIO_TRIGGER_ECHO ;
-  ex:hasInterface     ex:GPIO ;
-  ex:category "sensor" ;
-  ex:kind "distance" ;
-  ex:manufacturer "Generic" ;
-  ex:mpn "HC-SR04" ;
-  ex:vccMin "5"^^xsd:decimal ;
-  ex:vccMax "5"^^xsd:decimal ;
-  ex:i2cAddrDefault "GPIO_TRIGGER_ECHO" .
-
-ex:DC_Motor_with_Gearbox_High_Torque a ex:ActuatorPart ;
-  rdfs:label "DC Motor with Gearbox (High Torque)" ;
-  ex:actsOnProperty   ex:door_position ;
-  ex:hasInterface     ex:DRIVEN_BY_DRIVER ;
-  ex:category "actuator" ;
-  ex:kind "motor_dc" ;
-  ex:manufacturer "Generic" ;
-  ex:productURL "https://a.co/d/7mfZa56"^^xsd:anyURI .
-
-ex:Dual_H_Bridge_Motor_Driver_L298N a ex:ActuatorPart ;
-  rdfs:label "Dual H-Bridge Motor Driver (L298N)" ;
-  ex:actsOnProperty   ex:door_position ;
-  ex:hasInterface     ex:GPIO_PWM ;
-  ex:category "actuator" ;
-  ex:kind "motor_driver" ;
-  ex:manufacturer "Generic" ;
-  ex:mpn "L298N" ;
-  ex:productURL "https://a.co/d/7hzdG2m"^^xsd:anyURI .
+ex:128_x_64_Graphic_LCD a ex:ActuatorPart ;
+  rdfs:label "128 x 64 Graphic LCD" ;
+  ex:partKind "display_lcd" ;
+  ex:manufacturer "Vince Callahan" ;
+  ex:productURL "http://www.arduino.cc/playground/Code/GLCDks0108"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
 
 ex:12V_DC_Adapter a ex:PowerSupply ;
   rdfs:label "12V DC Adapter" ;
-  ex:category "power" ;
-  ex:kind "dc_12v_adapter" ;
+  ex:partKind "dc_12v_adapter" ;
   ex:manufacturer "Generic" ;
-  ex:vccMin "12"^^xsd:decimal ;
-  ex:vccMax "12"^^xsd:decimal ;
+  ex:vccMin "12.0"^^xsd:decimal ;
+  ex:vccMax "12.0"^^xsd:decimal ;
   ex:i2cAddrDefault "POWER" .
+
+ex:16_segment_display a ex:ActuatorPart ;
+  rdfs:label "16-segment display" ;
+  ex:partKind "display_segment" ;
+  ex:manufacturer "lionelmichel" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:3_Axis_Accelerometer_Breakout_MMA8452Q a ex:SensorPart ;
+  rdfs:label "3-Axis Accelerometer Breakout - MMA8452Q" ;
+  ex:partKind "accelerometer" ;
+  ex:manufacturer "Azharul Haque" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:4_x_AAA_Battery_Mount a ex:PowerSupply ;
+  rdfs:label "4 x AAA Battery Mount" ;
+  ex:partKind "battery" ;
+  ex:manufacturer "Brendan Howell/Dirk van Osterbosch/Lionel Michel" ;
+  ex:notes "imported_from_fritzing" .
 
 ex:5V_DC_Adapter a ex:PowerSupply ;
   rdfs:label "5V DC Adapter" ;
-  ex:category "power" ;
-  ex:kind "dc_5v_adapter" ;
+  ex:partKind "dc_5v_adapter" ;
   ex:manufacturer "Generic" ;
-  ex:vccMin "5"^^xsd:decimal ;
-  ex:vccMax "5"^^xsd:decimal ;
+  ex:vccMin "5.0"^^xsd:decimal ;
+  ex:vccMax "5.0"^^xsd:decimal ;
   ex:i2cAddrDefault "POWER" .
 
-ex:Relay_Module_4_Channel a ex:ActuatorPart ;
-  rdfs:label "Relay Module (4-Channel)" ;
-  ex:actsOnProperty   ex:power_state ;
-  ex:category "actuator" ;
-  ex:kind "relay_module" ;
-  ex:manufacturer "Generic" ;
-  ex:vccMin "5"^^xsd:decimal ;
-  ex:vccMax "5"^^xsd:decimal ;
-  ex:i2cAddrDefault "GPIO" .
+ex:7_SEGMENT_4DIGIT a ex:ActuatorPart ;
+  rdfs:label "7-SEGMENT-4DIGIT" ;
+  ex:partKind "display_segment" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
 
-ex:Reed_Switch_Door_State a ex:SensorPart ;
-  rdfs:label "Reed Switch (Door State)" ;
-  ex:observesProperty ex:door_state ;
+ex:7_SEGMENT_4DIGIT_YOUNGSUN a ex:ActuatorPart ;
+  rdfs:label "7-SEGMENT-4DIGIT-YOUNGSUN" ;
+  ex:partKind "display_segment" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:7_Segment_Display a ex:ActuatorPart ;
+  rdfs:label "7 Segment Display" ;
+  ex:partKind "display_segment" ;
+  ex:manufacturer "Stefan Hermann" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:7_SEGMENT_DISPLAY a ex:ActuatorPart ;
+  rdfs:label "7-SEGMENT-DISPLAY" ;
+  ex:partKind "display_segment" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:7_SEGMENT_DISPLAY_1_RED a ex:ActuatorPart ;
+  rdfs:label "7-SEGMENT-DISPLAY-1_-RED" ;
+  ex:partKind "display_segment" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:7_Segment_LED_Display a ex:ActuatorPart ;
+  rdfs:label "7-Segment LED Display" ;
+  ex:partKind "display_segment" ;
+  ex:manufacturer "lionelmichel" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:9_Degrees_of_Freedom_Sensor_Stick a ex:SensorPart ;
+  rdfs:label "9 Degrees of Freedom - Sensor Stick" ;
+  ex:partKind "sensor" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/10724"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ACS712 a ex:SensorPart ;
+  rdfs:label "ACS712" ;
+  ex:partKind "current" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ACS712_Low_Current_Sensor_Board_v12 a ex:SensorPart ;
+  rdfs:label "ACS712 Low Current Sensor Board v12" ;
+  ex:partKind "current" ;
+  ex:manufacturer "jonathan" ;
+  ex:productURL "http://www.sparkfun.com/products/8883"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:AD22100_Voltage_Output_Temperature_Sensor_with_Signal_Conditioning a ex:SensorPart ;
+  rdfs:label "AD22100 - Voltage Output Temperature Sensor with Signal Conditioning" ;
+  ex:partKind "sensor" ;
+  ex:manufacturer "Analog Devices" ;
+  ex:productURL "http://www.analog.com/AD22100"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:AD22151_Linear_Output_Magnetic_Field_Sensor a ex:SensorPart ;
+  rdfs:label "AD22151 - Linear Output Magnetic Field Sensor" ;
+  ex:partKind "magnetometer" ;
+  ex:manufacturer "Analog Devices" ;
+  ex:productURL "http://www.analog.com/AD22151G"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:AD654_Low_Cost_Monolithic_Voltage_to_Frequency_Converter a ex:PowerSupply ;
+  rdfs:label "AD654 - Low Cost Monolithic Voltage-to-Frequency Converter" ;
+  ex:partKind "regulator" ;
+  ex:manufacturer "Analog Devices" ;
+  ex:productURL "http://www.analog.com/ad654"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Adafruit_Atmega32u4_Breakout_Board a ex:ControllerBoard ;
+  rdfs:label "Adafruit Atmega32u4 Breakout Board" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "Christophe Augier" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Adafruit_HUZZAH_ESP8266_Breakout a ex:ControllerBoard ;
+  rdfs:label "Adafruit HUZZAH ESP8266 Breakout" ;
+  ex:partKind "esp8266" ;
+  ex:manufacturer "pkurtans" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:ADC ;
   ex:hasInterface     ex:GPIO ;
-  ex:category "sensor" ;
-  ex:kind "contact" ;
-  ex:manufacturer "Generic" ;
-  ex:productURL "https://a.co/d/1dbrfWd"^^xsd:anyURI .
+  ex:vccMin "2.5"^^xsd:decimal ;
+  ex:vccMax "3.6"^^xsd:decimal ;
+  ex:logicLevel "3.3"^^xsd:decimal ;
+  ex:productURL "https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/overview"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
 
-ex:Limit_Switch_Endstop a ex:SensorPart ;
-  rdfs:label "Limit Switch (Endstop)" ;
-  ex:observesProperty ex:mechanical_limit ;
+ex:ADMP504_Ultralow_Noise_Microphone_with_Bottom_Port_and_Analog_Output a ex:SensorPart ;
+  rdfs:label "ADMP504 - Ultralow Noise Microphone with Bottom Port and Analog Output" ;
+  ex:partKind "microphone" ;
+  ex:manufacturer "Analog Devices" ;
+  ex:productURL "http://www.analog.com/ADMP504"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ADP3300_High_Accuracy_50mA_Low_Dropout_Linear_Regulator a ex:PowerSupply ;
+  rdfs:label "ADP3300 - High Accuracy 50mA Low Dropout Linear Regulator" ;
+  ex:partKind "regulator" ;
+  ex:manufacturer "Analog Devices" ;
+  ex:productURL "http://www.analog.com/ADP3300"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ADXL180 a ex:SensorPart ;
+  rdfs:label "ADXL180" ;
+  ex:partKind "accelerometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ADXL193 a ex:SensorPart ;
+  rdfs:label "ADXL193" ;
+  ex:partKind "accelerometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ADXL327_Small_Low_Power_Axis_2G_Accelerometer a ex:SensorPart ;
+  rdfs:label "ADXL327 - Small, Low Power, #-Axis +/-2G Accelerometer" ;
+  ex:partKind "accelerometer" ;
+  ex:manufacturer "Analog Devices" ;
+  ex:productURL "http://www.analog.com/ADXL327"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ADXL335 a ex:SensorPart ;
+  rdfs:label "ADXL335" ;
+  ex:partKind "accelerometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ADXL345 a ex:SensorPart ;
+  rdfs:label "ADXL345" ;
+  ex:partKind "accelerometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Alphanumeric_LED_Display a ex:ActuatorPart ;
+  rdfs:label "Alphanumeric LED Display" ;
+  ex:partKind "led" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Altitude_Pressure_Sensor_MPL3115A2_Breakout a ex:SensorPart ;
+  rdfs:label "Altitude/Pressure Sensor - MPL3115A2 Breakout" ;
+  ex:partKind "generic" ;
+  ex:manufacturer "SparkFun and Fritzing Part-o-matic" ;
+  ex:productURL "https://www.sparkfun.com/products/11084"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Ambient_Light_Sensor a ex:SensorPart ;
+  rdfs:label "Ambient Light Sensor" ;
+  ex:partKind "light" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Ambient_Light_Sensor_TEMT6000_Breakout_Board a ex:SensorPart ;
+  rdfs:label "Ambient Light Sensor (TEMT6000 Breakout Board)" ;
+  ex:partKind "light" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/8688"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Board_Ethernet a ex:ControllerBoard ;
+  rdfs:label "Arduino Board Ethernet" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "althaus" ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoBoardEthernet"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_BT a ex:ControllerBoard ;
+  rdfs:label "Arduino BT" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "fabian Althaus" ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoBoardBluetooth"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Can_Bus_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino Can-Bus Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/10039"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Cap_Sense_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino Cap Sense Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/10508"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Cellular_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino Cellular Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9607"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Color_LCD_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino Color LCD Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9363"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Due_Rev2b a ex:ControllerBoard ;
+  rdfs:label "Arduino Due (Rev2b)" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "althaus" ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoBoardDue"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Esplora_Rev4 a ex:ControllerBoard ;
+  rdfs:label "Arduino Esplora (Rev4)" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "althaus" ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoBoardEsplora"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Ethernet_Shield_Rev3 a ex:ControllerBoard ;
+  rdfs:label "Arduino Ethernet Shield (Rev3)" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "fabian althaus" ;
+  ex:productURL "http://arduino.cc/de/Main/ArduinoEthernetShield"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Fio_Funnel_I_O a ex:ControllerBoard ;
+  rdfs:label "Arduino Fio (Funnel I/O)" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "althaus" ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoBoardFio"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_GPS_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino GPS Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/10102"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_GSM_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino GSM Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "f.althaus" ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoGSMShield"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Intel_Galileo_Shield_2_PCB a ex:ControllerBoard ;
+  rdfs:label "Arduino Intel Galileo Shield/2 PCB" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "Fabian Althaus" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Intel_Galileo_Shield_PCB a ex:ControllerBoard ;
+  rdfs:label "Arduino Intel Galileo Shield PCB" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "Fabian Althaus" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Joystick_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino Joystick Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9490"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Leonardo_Rev3b a ex:ControllerBoard ;
+  rdfs:label "Arduino Leonardo (Rev3b)" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "althaus" ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoBoardLeonardo"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Mega_2560 a ex:ControllerBoard ;
+  rdfs:label "Arduino Mega 2560" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "Arduino" ;
+  ex:mpn "A000067" ;
+  sosa:hasFeatureOfInterest ex:embedded_platform ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:ADC ;
   ex:hasInterface     ex:GPIO ;
-  ex:category "sensor" ;
-  ex:kind "contact" ;
-  ex:manufacturer "Generic" ;
-  ex:productURL "https://a.co/d/2GAOnEG"^^xsd:anyURI .
+  ex:vccMin "7.0"^^xsd:decimal ;
+  ex:vccMax "12.0"^^xsd:decimal ;
+  ex:logicLevel "5.0"^^xsd:decimal ;
+  ex:i2cAddrDefault "I2C|SPI|UART|ADC|GPIO" ;
+  ex:notes "Many GPIOs" .
 
-ex:RTC_Module_DS3231 a ex:ControllerBoard ;
-  rdfs:label "RTC Module (DS3231)" ;
-  ex:observesProperty ex:timekeeping ;
-  ex:supportsInterface ex:I2C ;
-  ex:supportsInterface ex:SPI ;
-  ex:supportsInterface ex:UART ;
-  ex:supportsInterface ex:ADC ;
-  ex:supportsInterface ex:GPIO ;
-  ex:category "controller" ;
-  ex:kind "rtc_module" ;
-  ex:manufacturer "Generic" ;
-  ex:mpn "DS3231" ;
+ex:Arduino_Mega_2560_Rev3 a ex:ControllerBoard ;
+  rdfs:label "Arduino Mega 2560 (Rev3)" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "althaus" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:ADC ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "7.0"^^xsd:decimal ;
+  ex:vccMax "12.0"^^xsd:decimal ;
+  ex:logicLevel "5.0"^^xsd:decimal ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoBoardMega2560"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Mega_ADK_Rev3 a ex:ControllerBoard ;
+  rdfs:label "Arduino Mega ADK (Rev3)" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "althaus" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:ADC ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "7.0"^^xsd:decimal ;
+  ex:vccMax "12.0"^^xsd:decimal ;
+  ex:logicLevel "5.0"^^xsd:decimal ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoBoardADK"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Mega_Pro_3_3V a ex:ControllerBoard ;
+  rdfs:label "Arduino Mega Pro 3.3V" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "f.althaus" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:ADC ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "7.0"^^xsd:decimal ;
+  ex:vccMax "12.0"^^xsd:decimal ;
+  ex:logicLevel "5.0"^^xsd:decimal ;
+  ex:productURL "https://www.sparkfun.com/products/10744"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Mega_Proto_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino Mega Proto Shield" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "SparkFun" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:ADC ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "7.0"^^xsd:decimal ;
+  ex:vccMax "12.0"^^xsd:decimal ;
+  ex:logicLevel "5.0"^^xsd:decimal ;
+  ex:productURL "http://www.sparkfun.com/products/9346"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Mega_Proto_Shield_v6 a ex:ControllerBoard ;
+  rdfs:label "Arduino Mega Proto Shield (v6)" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "jonathan" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:ADC ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "7.0"^^xsd:decimal ;
+  ex:vccMax "12.0"^^xsd:decimal ;
+  ex:logicLevel "5.0"^^xsd:decimal ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Mega_Sensor_Shield_v2_0 a ex:ControllerBoard ;
+  rdfs:label "Arduino Mega Sensor Shield v2.0" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "KingDarBoja" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:ADC ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "7.0"^^xsd:decimal ;
+  ex:vccMax "12.0"^^xsd:decimal ;
+  ex:logicLevel "5.0"^^xsd:decimal ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Mega_Shield_PCB a ex:ControllerBoard ;
+  rdfs:label "Arduino Mega Shield PCB" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "Fabian Althaus" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:ADC ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "7.0"^^xsd:decimal ;
+  ex:vccMax "12.0"^^xsd:decimal ;
+  ex:logicLevel "5.0"^^xsd:decimal ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Mega_Shield_PCB a ex:ControllerBoard ;
+  rdfs:label "Arduino Mega Shield PCB" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "Stefan Hermann" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:ADC ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "7.0"^^xsd:decimal ;
+  ex:vccMax "12.0"^^xsd:decimal ;
+  ex:logicLevel "5.0"^^xsd:decimal ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Micro_Rev3 a ex:ControllerBoard ;
+  rdfs:label "Arduino Micro (Rev3)" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "althaus" ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoBoardMicro"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_MicroSD_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino MicroSD Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9802"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Midi_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino Midi Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9595"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Mini_Proto_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino Mini Proto Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9709"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Mini_Rev5 a ex:ControllerBoard ;
+  rdfs:label "Arduino Mini (Rev5)" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "althaus" ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoBoardMini"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Modkit_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino Modkit Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/10018"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Motor_Shield a ex:ActuatorPart ;
+  rdfs:label "Arduino Motor Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9815"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Motor_Shield_Rev3 a ex:ActuatorPart ;
+  rdfs:label "Arduino Motor Shield (Rev3)" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "althaus" ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoMotorShieldR3"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_MP3_Player_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino MP3 Player Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/10628"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Musical_Instrument_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino Musical Instrument Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/10587"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Nano_Rev3_0 a ex:ControllerBoard ;
+  rdfs:label "Arduino Nano (Rev3.0)" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "Althaus" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:ADC ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "7.0"^^xsd:decimal ;
+  ex:vccMax "12.0"^^xsd:decimal ;
+  ex:logicLevel "5.0"^^xsd:decimal ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoBoardNano"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Nano_Rev3_0_ICSP a ex:ControllerBoard ;
+  rdfs:label "Arduino Nano (Rev3.0) (ICSP)" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "Althaus" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:ADC ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "7.0"^^xsd:decimal ;
+  ex:vccMax "12.0"^^xsd:decimal ;
+  ex:logicLevel "5.0"^^xsd:decimal ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoBoardNano"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Power_Driver_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino Power Driver Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/10305"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Pro a ex:ControllerBoard ;
+  rdfs:label "Arduino Pro" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "Fabian Althaus" ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoBoardPro"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Pro_Mini_3_3V a ex:ControllerBoard ;
+  rdfs:label "Arduino Pro Mini (3.3V)" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "f.althaus" ;
   ex:vccMin "3.3"^^xsd:decimal ;
-  ex:vccMax "5"^^xsd:decimal ;
+  ex:vccMax "3.3"^^xsd:decimal ;
+  ex:productURL "https://www.sparkfun.com/products/11114"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Pro_Mini_5V a ex:ControllerBoard ;
+  rdfs:label "Arduino Pro Mini (5V)" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "f.althaus" ;
+  ex:vccMin "5.0"^^xsd:decimal ;
+  ex:vccMax "5.0"^^xsd:decimal ;
+  ex:productURL "https://www.sparkfun.com/products/11113"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Pro_Mini_v13 a ex:ControllerBoard ;
+  rdfs:label "Arduino Pro Mini v13" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "althaus" ;
+  ex:productURL "https://www.sparkfun.com/products/11113"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_ProtoScrew_Shield_Kit a ex:ControllerBoard ;
+  rdfs:label "Arduino ProtoScrew Shield Kit" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9729"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_ProtoShield a ex:ControllerBoard ;
+  rdfs:label "Arduino ProtoShield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/7914"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Prototyping_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino Prototyping Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "Arduino" ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoProtoShield"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Shield_PCB a ex:ControllerBoard ;
+  rdfs:label "Arduino Shield PCB" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "Brendan Howell" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Shield_PCB a ex:ControllerBoard ;
+  rdfs:label "Arduino Shield PCB" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "Fabian Althaus" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Uno_Rev3 a ex:ControllerBoard ;
+  rdfs:label "Arduino Uno (Rev3)" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "althaus" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:ADC ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "7.0"^^xsd:decimal ;
+  ex:vccMax "12.0"^^xsd:decimal ;
+  ex:logicLevel "5.0"^^xsd:decimal ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoBoardUno"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Uno_Rev3_ICSP a ex:ControllerBoard ;
+  rdfs:label "Arduino Uno (Rev3) - ICSP" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "althaus" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:ADC ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "7.0"^^xsd:decimal ;
+  ex:vccMax "12.0"^^xsd:decimal ;
+  ex:logicLevel "5.0"^^xsd:decimal ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoBoardUno"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_USB_Host_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino USB Host Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9947"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Voicebox_Shield_Stephen_Hawking_in_a_box a ex:ControllerBoard ;
+  rdfs:label "Arduino Voicebox Shield (Stephen Hawking in a box)" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9799"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_WiFly_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino WiFly Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9954"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Wireless_SD_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino Wireless SD Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "Arduino" ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoWirelessShield"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Xbee_Libellium_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino Xbee Libellium Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "Arduino" ;
+  ex:productURL "http://arduino.cc/it/Main/ArduinoXbeeShield"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_XBee_Shield a ex:ControllerBoard ;
+  rdfs:label "Arduino XBee Shield" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9976"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Yun a ex:ControllerBoard ;
+  rdfs:label "Arduino Yun" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "fabian althaus" ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoBoardYun?from=Main.ArduinoYUN"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ArduPilot_Mega a ex:ControllerBoard ;
+  rdfs:label "ArduPilot Mega" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/10294"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Assorted_LEDs_Kit a ex:ActuatorPart ;
+  rdfs:label "Assorted LEDs Kit" ;
+  ex:partKind "led" ;
+  ex:manufacturer "ELEGOO" ;
+  sosa:actsOnProperty   ex:brightness ;
+  sosa:hasFeatureOfInterest ex:indicator_light ;
+  ex:hasInterface     ex:GPIO ;
+  ex:lifecycle "Diffused flashing LEDs" .
+
+ex:ATMEGA128 a ex:ControllerBoard ;
+  rdfs:label "ATMEGA128" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ATMEGA128RFA1 a ex:ControllerBoard ;
+  rdfs:label "ATMEGA128RFA1" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:atmega168 a ex:ControllerBoard ;
+  rdfs:label "atmega168" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "Fritzing Part-o-matic" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ATMEGA168 a ex:ControllerBoard ;
+  rdfs:label "ATMEGA168" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:atmega168_smd a ex:ControllerBoard ;
+  rdfs:label "atmega168 smd" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "Mr.T" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ATMEGA2560 a ex:ControllerBoard ;
+  rdfs:label "ATMEGA2560" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ATmega328 a ex:ControllerBoard ;
+  rdfs:label "ATmega328" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "fabian althaus" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:atmega328 a ex:ControllerBoard ;
+  rdfs:label "atmega328" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "Fritzing Part-o-matic" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ATMEGA32U4 a ex:ControllerBoard ;
+  rdfs:label "ATMEGA32U4" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "Johannes Wronka" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ATMEGA32U4 a ex:ControllerBoard ;
+  rdfs:label "ATMEGA32U4" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ATmega644 a ex:ControllerBoard ;
+  rdfs:label "ATmega644" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "Luis Emiro Linares Garcia" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ATMEGA8U2 a ex:ControllerBoard ;
+  rdfs:label "ATMEGA8U2" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ATX24_Pin_Power_Supply_Connector a ex:PowerSupply ;
+  rdfs:label "ATX24 Pin Power Supply Connector" ;
+  ex:partKind "adapter" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Barometric_Pressure_Sensor a ex:SensorPart ;
+  rdfs:label "Barometric Pressure Sensor" ;
+  ex:partKind "generic" ;
+  ex:manufacturer "tigoe" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Barometric_Pressure_Sensor_BMP085_Breakout a ex:SensorPart ;
+  rdfs:label "Barometric Pressure Sensor - BMP085 Breakout" ;
+  ex:partKind "generic" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9694"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Barometric_Pressure_Sensor_BMP180_Breakout_GY_68 a ex:SensorPart ;
+  rdfs:label "Barometric Pressure Sensor - BMP180 Breakout (GY-68)" ;
+  ex:partKind "temp_humidity" ;
+  ex:manufacturer "Richard Bruneau fixed by f.althaus" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Basic_Force_Sensing_Resistor_FSR a ex:SensorPart ;
+  rdfs:label "Basic Force Sensing Resistor (FSR)" ;
+  ex:partKind "flex_force" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Basic_Servo a ex:ActuatorPart ;
+  rdfs:label "Basic Servo" ;
+  ex:partKind "actuator" ;
+  ex:manufacturer "Stefan Hermann" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Battery a ex:PowerSupply ;
+  rdfs:label "Battery" ;
+  ex:partKind "battery" ;
+  ex:manufacturer "Brendan Howell/Dirk van Osterbosch/Lionel Michel" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:BATTERY_2 a ex:PowerSupply ;
+  rdfs:label "BATTERY-2" ;
+  ex:partKind "battery" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Battery_block_9V a ex:PowerSupply ;
+  rdfs:label "Battery block 9V" ;
+  ex:partKind "battery" ;
+  ex:manufacturer "Lionel Michel" ;
+  ex:vccMin "9.0"^^xsd:decimal ;
+  ex:vccMax "9.0"^^xsd:decimal ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Battery_Holders a ex:PowerSupply ;
+  rdfs:label "Battery Holders" ;
+  ex:partKind "battery" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Blue_smd_LED a ex:ActuatorPart ;
+  rdfs:label "Blue smd LED" ;
+  ex:partKind "led" ;
+  ex:manufacturer "Mr.T" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:BMA180 a ex:SensorPart ;
+  rdfs:label "BMA180" ;
+  ex:partKind "accelerometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:BME280_Breakout a ex:SensorPart ;
+  rdfs:label "BME280 Breakout" ;
+  ex:partKind "environment" ;
+  ex:manufacturer "Bosch/Adafruit" ;
+  ex:mpn "BME280" ;
+  sosa:observesProperty ex:temperature ;
+  sosa:observesProperty ex:humidity ;
+  sosa:observesProperty ex:pressure ;
+  sosa:hasFeatureOfInterest ex:room_air ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:vccMin "1.8"^^xsd:decimal ;
+  ex:vccMax "3.6"^^xsd:decimal ;
+  ex:i2cAddrDefault "0x77" ;
+  ex:productURL "https://www.sparkfun.com/products/13676"^^xsd:anyURI ;
+  ex:offerPrice "1.184"^^xsd:decimal ;
+  ex:priceCurrency "EUR" ;
+  ex:notes "High precision" .
+
+ex:BMP085_Pressure_Sensor a ex:SensorPart ;
+  rdfs:label "BMP085 Pressure Sensor" ;
+  ex:partKind "generic" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Breadboard_Power_Supply_Board_SMD a ex:PowerSupply ;
+  rdfs:label "Breadboard Power Supply Board SMD" ;
+  ex:partKind "adapter" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/10804"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Breakout_Board_for_Electret_Microphone a ex:SensorPart ;
+  rdfs:label "Breakout Board for Electret Microphone" ;
+  ex:partKind "microphone" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9964"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:BUTTON_MAGNETIC a ex:SensorPart ;
+  rdfs:label "BUTTON-MAGNETIC" ;
+  ex:partKind "magnetometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Buzzer_12mm a ex:ActuatorPart ;
+  rdfs:label "Buzzer 12mm" ;
+  ex:partKind "actuator" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:CAR_RELAY a ex:ActuatorPart ;
+  rdfs:label "CAR RELAY" ;
+  ex:partKind "actuator" ;
+  ex:manufacturer "nail" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:chipKIT_Motor_Shield a ex:ActuatorPart ;
+  rdfs:label "chipKIT Motor Shield" ;
+  ex:partKind "generic" ;
+  ex:manufacturer "Digilent/Amber Mear" ;
+  ex:productURL "http://digilentinc.com/Products/Detail.cfm?NavPath=2,892,1177&Prod=CHIPKIT-MOTOR-SHIELD"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Chirp_Soil_Moisture_Sensor_v2_7_3 a ex:SensorPart ;
+  rdfs:label "Chirp! Soil Moisture Sensor v2.7.3" ;
+  ex:partKind "moisture" ;
+  ex:manufacturer "Jenny Madorsky" ;
+  sosa:observesProperty ex:soil_moisture ;
+  sosa:hasFeatureOfInterest ex:soil ;
+  ex:hasInterface     ex:ADC ;
+  ex:vccMin "3.3"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Color_Sensor_Breakout_ADJD_S311 a ex:SensorPart ;
+  rdfs:label "Color Sensor Breakout ADJD-S311" ;
+  ex:partKind "color" ;
+  ex:manufacturer "wreutz" ;
+  ex:productURL "http://www.sparkfun.com/products/10701"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Compass_Module_HMC6352 a ex:SensorPart ;
+  rdfs:label "Compass Module - HMC6352" ;
+  ex:partKind "magnetometer" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/7915"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:COPERNICUS a ex:SensorPart ;
+  rdfs:label "COPERNICUS" ;
+  ex:partKind "gps" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:COPERNICUS_DIP a ex:SensorPart ;
+  rdfs:label "COPERNICUS-DIP" ;
+  ex:partKind "gps" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Dagu_DGServo_9g_End_View a ex:ActuatorPart ;
+  rdfs:label "Dagu DGServo 9g (End View)" ;
+  ex:partKind "actuator" ;
+  ex:manufacturer "Stephen Parry" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Dagu_DGServo_9g_header_connector_female a ex:ActuatorPart ;
+  rdfs:label "Dagu DGServo 9g header connector (female)" ;
+  ex:partKind "actuator" ;
+  ex:manufacturer "Stephen Parry" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Dagu_DGServo_9g_header_male a ex:ActuatorPart ;
+  rdfs:label "Dagu DGServo 9g header (male)" ;
+  ex:partKind "actuator" ;
+  ex:manufacturer "Stephen Parry" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Dagu_DGServo_9g_Pan_and_tilt a ex:ActuatorPart ;
+  rdfs:label "Dagu DGServo 9g (Pan and tilt)" ;
+  ex:partKind "actuator" ;
+  ex:manufacturer "Stephen Parry" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Dagu_DGServo_9g_PCB_mounting_holes a ex:ActuatorPart ;
+  rdfs:label "Dagu DGServo 9g PCB mounting holes" ;
+  ex:partKind "actuator" ;
+  ex:manufacturer "Stephen Parry" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Dagu_DGServo_9g_Top_view a ex:ActuatorPart ;
+  rdfs:label "Dagu DGServo 9g (Top view)" ;
+  ex:partKind "actuator" ;
+  ex:manufacturer "Stephen Parry" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:DC_DC_CONVERTER a ex:PowerSupply ;
+  rdfs:label "DC-DC_CONVERTER" ;
+  ex:partKind "regulator" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:DCM01_Reflective_Blood_Sensor a ex:SensorPart ;
+  rdfs:label "DCM01 Reflective Blood Sensor" ;
+  ex:partKind "generic" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:DC_Motor a ex:ActuatorPart ;
+  rdfs:label "DC Motor" ;
+  ex:partKind "actuator" ;
+  ex:manufacturer "Brendan Howell/Dirk van Osterbosch/Lionel Michel" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:DC_Motor_with_Gearbox_High_Torque a ex:ActuatorPart ;
+  rdfs:label "DC Motor with Gearbox (High Torque)" ;
+  ex:partKind "motor_dc" ;
+  ex:manufacturer "Generic" ;
+  sosa:actsOnProperty   ex:door_position ;
+  sosa:hasFeatureOfInterest ex:garage_door ;
+  ex:hasInterface     ex:DRIVEN_BY_DRIVER ;
+  ex:productURL "https://a.co/d/7mfZa56"^^xsd:anyURI .
+
+ex:DeadOn_RTC_DS3234_Breakout a ex:SensorPart ;
+  rdfs:label "DeadOn RTC - DS3234 Breakout" ;
+  ex:partKind "rtc" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/10160"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:DeuLigne_1_1_The_Snootlab_s_LCD_shield_for_Arduino a ex:ControllerBoard ;
+  rdfs:label "DeuLigne 1.1 - The Snootlab's LCD shield for Arduino" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "Snootlab" ;
+  ex:productURL "http://shop.snootlab.com/shields-snootlab/135-deuligne.html"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Digital_Temperature_Sensor_Breakout_TMP102 a ex:SensorPart ;
+  rdfs:label "Digital Temperature Sensor Breakout - TMP102" ;
+  ex:partKind "sensor" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9418"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:DIP_Relay_D31A a ex:ActuatorPart ;
+  rdfs:label "DIP-Relay-D31A" ;
+  ex:partKind "actuator" ;
+  ex:manufacturer "Frank Belau" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:DRV_8825_Stepper_Motor_Carrier_High_Current a ex:ActuatorPart ;
+  rdfs:label "DRV 8825 Stepper Motor Carrier, High Current" ;
+  ex:partKind "motor_stepper" ;
+  ex:manufacturer "Bantum Works fix: f.althaus" ;
+  sosa:actsOnProperty   ex:angular_position ;
+  sosa:hasFeatureOfInterest ex:linear_axis ;
+  ex:hasInterface     ex:DRIVEN_BY_DRIVER ;
+  ex:vccMin "12.0"^^xsd:decimal ;
+  ex:vccMax "24.0"^^xsd:decimal ;
+  ex:productURL "https://www.pololu.com/product/2133"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:DS1307 a ex:SensorPart ;
+  rdfs:label "DS1307" ;
+  ex:partKind "rtc" ;
+  ex:manufacturer "Revolution Education Ltd" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:DS1307 a ex:SensorPart ;
+  rdfs:label "DS1307" ;
+  ex:partKind "rtc" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:DS18B20_1_Wire_Temperature_Sensor a ex:SensorPart ;
+  rdfs:label "DS18B20 1-Wire Temperature Sensor" ;
+  ex:partKind "temperature" ;
+  ex:manufacturer "John De Cristofaro for Adafruit Industries, fixed by f.althaus" ;
+  sosa:observesProperty ex:temperature ;
+  sosa:hasFeatureOfInterest ex:liquid ;
+  ex:hasInterface     ex:OneWire ;
+  ex:vccMin "3.0"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:rangeMin "-55.0"^^xsd:decimal ;
+  ex:rangeMax "125.0"^^xsd:decimal ;
+  ex:units "degC" ;
+  ex:productURL "http://www.maxim-ic.com/datasheet/index.mvp/id/2812"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Dual_H_Bridge_Motor_Driver_L298N a ex:ActuatorPart ;
+  rdfs:label "Dual H-Bridge Motor Driver (L298N)" ;
+  ex:partKind "motor_driver" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "L298N" ;
+  sosa:actsOnProperty   ex:motor_velocity ;
+  sosa:hasFeatureOfInterest ex:dc_motor ;
+  ex:hasInterface     ex:GPIO ;
+  ex:hasInterface     ex:PWM ;
+  ex:vccMin "5.0"^^xsd:decimal ;
+  ex:vccMax "35.0"^^xsd:decimal ;
+  ex:iActive_mA "2000.0"^^xsd:decimal ;
+  ex:productURL "https://a.co/d/7hzdG2m"^^xsd:anyURI .
+
+ex:Dual_VNH2SP30_Motor_Driver a ex:ActuatorPart ;
+  rdfs:label "Dual VNH2SP30 Motor Driver" ;
+  ex:partKind "motor_driver" ;
+  ex:manufacturer "David Thomasson" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:DUO_LED_RG a ex:ActuatorPart ;
+  rdfs:label "DUO LED RG" ;
+  ex:partKind "led" ;
+  ex:manufacturer "Kubax" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:EasyDriver_v44 a ex:ActuatorPart ;
+  rdfs:label "EasyDriver_v44" ;
+  ex:partKind "motor_driver" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/10267"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Electron a ex:ControllerBoard ;
+  rdfs:label "Electron" ;
+  ex:partKind "particle" ;
+  ex:manufacturer "Brett Walach & Julien Vanier; fix: f.althaus" ;
+  ex:productURL "https://www.particle.io"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ELEGOO_ESP_WROOM_32_Bluetooth a ex:ControllerBoard ;
+  rdfs:label "ELEGOO ESP-WROOM-32 (Bluetooth)" ;
+  ex:partKind "esp32" ;
+  ex:manufacturer "ELEGOO" ;
+  ex:mpn "ESP-WROOM-32" ;
+  sosa:hasFeatureOfInterest ex:embedded_platform ;
+  ex:vccMin "3.3"^^xsd:decimal ;
+  ex:vccMax "3.3"^^xsd:decimal ;
+  ex:i2cAddrDefault "I2C|SPI|UART|ADC|GPIO" ;
+  ex:offerPrice "3.7843"^^xsd:decimal ;
+  ex:priceCurrency "USD" ;
+  ex:lifecycle "ESP32 dev board" .
+
+ex:EM406_GPS_Connector a ex:SensorPart ;
+  rdfs:label "EM406 GPS Connector" ;
+  ex:partKind "gps" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ENCODER_2LED a ex:ActuatorPart ;
+  rdfs:label "ENCODER_2LED" ;
+  ex:partKind "led" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ENS160_eCO2_TVOC_AHT21_Temp_Humidity a ex:SensorPart ;
+  rdfs:label "ENS160 eCO2/TVOC + AHT21 Temp/Humidity" ;
+  ex:partKind "environment_multi" ;
+  ex:manufacturer "ENS+ASAIR" ;
+  ex:mpn "ENS160+AHT21" ;
+  sosa:observesProperty ex:eCO2 ;
+  sosa:observesProperty ex:TVOC ;
+  sosa:observesProperty ex:temperature ;
+  sosa:observesProperty ex:humidity ;
+  sosa:hasFeatureOfInterest ex:room_air ;
+  ex:vccMin "3.3"^^xsd:decimal ;
+  ex:vccMax "5.0"^^xsd:decimal ;
   ex:i2cAddrDefault "I2C" .
 
-ex:Flexible_Plastic_Sheet_Door_Panel a ex:Mechanical ;
-  rdfs:label "Flexible Plastic Sheet (Door Panel)" ;
-  ex:category "mechanical" ;
-  ex:kind "door_panel" ;
-  ex:manufacturer "Polvtor" ;
-  ex:priceCurrency "https://www.amazon.ca/Polvtor-Flexible-Materials-Handicrafts-Decoration/dp/B0CCMNPWGW/" .
+ex:E_Paper_Eval_Board a ex:ActuatorPart ;
+  rdfs:label "E-Paper Eval Board" ;
+  ex:partKind "display_epaper" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/10304"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
 
-ex:LDR_Module_Photoresistor a ex:SensorPart ;
-  rdfs:label "LDR Module (Photoresistor)" ;
-  ex:observesProperty ex:illuminance ;
+ex:ESP8266_WiFi_Module a ex:ControllerBoard ;
+  rdfs:label "ESP8266 WiFi Module" ;
+  ex:partKind "esp8266" ;
+  ex:manufacturer "YDonnelly fixed f.althaus" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
   ex:hasInterface     ex:ADC ;
-  ex:category "sensor" ;
-  ex:kind "light" ;
-  ex:manufacturer "Generic" ;
-  ex:lifecycle "Analog divider output" .
-
-ex:PIR_Motion_Sensor_HC_SR501 a ex:SensorPart ;
-  rdfs:label "PIR Motion Sensor HC-SR501" ;
-  ex:observesProperty ex:motion ;
   ex:hasInterface     ex:GPIO ;
-  ex:category "sensor" ;
-  ex:kind "motion" ;
-  ex:manufacturer "Generic" ;
-  ex:mpn "HC-SR501" ;
-  ex:vccMin "5"^^xsd:decimal ;
-  ex:vccMax "5"^^xsd:decimal ;
-  ex:i2cAddrDefault "GPIO" ;
-  ex:notes "Adjustable sensitivity/time" .
+  ex:vccMin "2.5"^^xsd:decimal ;
+  ex:vccMax "3.6"^^xsd:decimal ;
+  ex:logicLevel "3.3"^^xsd:decimal ;
+  ex:productURL "http://www.esp8266.com"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
 
-ex:Jumper_Wires_Kit_120pcs a ex:Part ;
-  rdfs:label "Jumper Wires Kit (120pcs)" ;
-  ex:category "tooling" ;
-  ex:kind "jumper_wires" ;
-  ex:manufacturer "Elegoo" .
+ex:ESP8266_WiFi_Module a ex:ControllerBoard ;
+  rdfs:label "ESP8266 WiFi Module" ;
+  ex:partKind "esp8266" ;
+  ex:manufacturer "YDonnelly; Geert Roumen; greg-ware; Simone Picchioni + fix:f.althaus" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:ADC ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "2.5"^^xsd:decimal ;
+  ex:vccMax "3.6"^^xsd:decimal ;
+  ex:logicLevel "3.3"^^xsd:decimal ;
+  ex:productURL "http://www.esp8266.com"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ET312_GPS_Receiver a ex:SensorPart ;
+  rdfs:label "ET312 GPS Receiver" ;
+  ex:partKind "gps" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:FemtoBuck_LED_Driver a ex:ActuatorPart ;
+  rdfs:label "FemtoBuck LED Driver" ;
+  ex:partKind "led" ;
+  ex:manufacturer "f.althaus" ;
+  ex:productURL "https://www.sparkfun.com/products/12937"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:GAS_SENSOR a ex:SensorPart ;
+  rdfs:label "GAS_SENSOR" ;
+  ex:partKind "sensor" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Gas_Sensor_Breakout_Board a ex:SensorPart ;
+  rdfs:label "Gas Sensor Breakout Board" ;
+  ex:partKind "sensor" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/8891"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Gas_Sensor_Module a ex:SensorPart ;
+  rdfs:label "Gas Sensor Module" ;
+  ex:partKind "gas_smoke" ;
+  ex:manufacturer "DKARDU" ;
+  sosa:observesProperty ex:smoke ;
+  sosa:hasFeatureOfInterest ex:room_air ;
+  ex:vccMin "5.0"^^xsd:decimal ;
+  ex:vccMax "5.0"^^xsd:decimal ;
+  ex:i2cAddrDefault "ADC" ;
+  ex:notes "Returns integer 0–360; threshold ~70" .
+
+ex:GE863_Cellular_Module_with_GPS a ex:SensorPart ;
+  rdfs:label "GE863 Cellular Module with GPS" ;
+  ex:partKind "gps" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:GM862_Cellular_Module_with_GPS a ex:SensorPart ;
+  rdfs:label "GM862 Cellular Module with GPS" ;
+  ex:partKind "gps" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:GPS_09838 a ex:SensorPart ;
+  rdfs:label "GPS-09838" ;
+  ex:partKind "gps" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:GPS_Antenna_Amp a ex:SensorPart ;
+  rdfs:label "GPS Antenna Amp" ;
+  ex:partKind "gps" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:GR_10_GPS_Receiver_Module a ex:SensorPart ;
+  rdfs:label "GR-10 GPS Receiver Module" ;
+  ex:partKind "gps" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Graphical_LCD_128x64 a ex:ActuatorPart ;
+  rdfs:label "Graphical LCD 128x64" ;
+  ex:partKind "display_lcd" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Grove_3_Axis_Digital_Accelerometer_16g a ex:SensorPart ;
+  rdfs:label "Grove 3 Axis Digital Accelerometer 16g" ;
+  ex:partKind "accelerometer" ;
+  ex:manufacturer "Yihui Xiong" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Grove_Light_Sensor a ex:SensorPart ;
+  rdfs:label "Grove Light Sensor" ;
+  ex:partKind "light" ;
+  ex:manufacturer "Yihui Xiong" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Grove_OLED_128x96 a ex:ActuatorPart ;
+  rdfs:label "Grove OLED 128x96" ;
+  ex:partKind "display_oled" ;
+  ex:manufacturer "Yihui Xiong" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Grove_Temperature_Sensor a ex:SensorPart ;
+  rdfs:label "Grove Temperature Sensor" ;
+  ex:partKind "sensor" ;
+  ex:manufacturer "Yihui Xiong" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:H_Bridge a ex:ActuatorPart ;
+  rdfs:label "H-Bridge" ;
+  ex:partKind "motor_driver" ;
+  ex:manufacturer "Dirk van Oosterbosch" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:hc_sr04 a ex:SensorPart ;
+  rdfs:label "hc-sr04" ;
+  ex:partKind "distance" ;
+  ex:manufacturer "Ricky Ng-Adam fixed by FA" ;
+  sosa:observesProperty ex:distance ;
+  sosa:hasFeatureOfInterest ex:obstacle_proximity ;
+  ex:hasInterface     ex:GPIO_TRIGGER_ECHO ;
+  ex:vccMin "4.5"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:logicLevel "5.0"^^xsd:decimal ;
+  ex:rangeMin "2.0"^^xsd:decimal ;
+  ex:rangeMax "400.0"^^xsd:decimal ;
+  ex:units "cm" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:HC_SR04_Ultrasonic_Distance_Sensor a ex:SensorPart ;
+  rdfs:label "HC-SR04 Ultrasonic Distance Sensor" ;
+  ex:partKind "distance" ;
+  ex:manufacturer "Richard Bruneau" ;
+  sosa:observesProperty ex:distance ;
+  sosa:hasFeatureOfInterest ex:obstacle_proximity ;
+  ex:hasInterface     ex:GPIO_TRIGGER_ECHO ;
+  ex:vccMin "4.5"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:logicLevel "5.0"^^xsd:decimal ;
+  ex:rangeMin "2.0"^^xsd:decimal ;
+  ex:rangeMax "400.0"^^xsd:decimal ;
+  ex:units "cm" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:HEX_CONVERTER a ex:PowerSupply ;
+  rdfs:label "HEX_CONVERTER" ;
+  ex:partKind "regulator" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:HIH_4030 a ex:SensorPart ;
+  rdfs:label "HIH-4030" ;
+  ex:partKind "temp_humidity" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:HMC1041Z a ex:SensorPart ;
+  rdfs:label "HMC1041Z" ;
+  ex:partKind "magnetometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:HMC1051Z a ex:SensorPart ;
+  rdfs:label "HMC1051Z" ;
+  ex:partKind "magnetometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:HMC1052L a ex:SensorPart ;
+  rdfs:label "HMC1052L" ;
+  ex:partKind "magnetometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:HMC5843 a ex:SensorPart ;
+  rdfs:label "HMC5843" ;
+  ex:partKind "magnetometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:HMC5883L a ex:SensorPart ;
+  rdfs:label "HMC5883L" ;
+  ex:partKind "magnetometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:HMC6042 a ex:SensorPart ;
+  rdfs:label "HMC6042" ;
+  ex:partKind "magnetometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:HMC6343 a ex:SensorPart ;
+  rdfs:label "HMC6343" ;
+  ex:partKind "magnetometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:HMC6352 a ex:SensorPart ;
+  rdfs:label "HMC6352" ;
+  ex:partKind "magnetometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Humidity_and_Temperature_Sensor_RHT03 a ex:SensorPart ;
+  rdfs:label "Humidity and Temperature Sensor RHT03" ;
+  ex:partKind "sensor" ;
+  ex:manufacturer "Martha Maldonado" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Humidity_Sensor_HIH_4030_Breakout a ex:SensorPart ;
+  rdfs:label "Humidity Sensor - HIH-4030 Breakout" ;
+  ex:partKind "sensor" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9569"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Humidity_Temperature_Sensor_SHT15 a ex:SensorPart ;
+  rdfs:label "Humidity Temperature Sensor SHT15" ;
+  ex:partKind "sensor" ;
+  ex:manufacturer "wreutz" ;
+  ex:productURL "http://www.sparkfun.com/products/8257"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:HX711_Weighing_Sensor_Module a ex:SensorPart ;
+  rdfs:label "HX711 Weighing Sensor Module" ;
+  ex:partKind "generic" ;
+  ex:manufacturer "Richard Bruneau fixed: f.althaus" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:IMU3000 a ex:SensorPart ;
+  rdfs:label "IMU3000" ;
+  ex:partKind "imu" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:IMU_Analog_Combo_Board_5_Degrees_of_Freedom a ex:SensorPart ;
+  rdfs:label "IMU Analog Combo Board - 5 Degrees of Freedom" ;
+  ex:partKind "imu" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9268"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:IMU_Digital_Combo_Board_6DOF a ex:SensorPart ;
+  rdfs:label "IMU Digital Combo Board 6DOF" ;
+  ex:partKind "imu" ;
+  ex:manufacturer "Andre Knoerig" ;
+  ex:productURL "http://www.sparkfun.com/products/10121"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
 
 ex:INA226_Current_Power_Monitor a ex:SensorPart ;
   rdfs:label "INA226 Current/Power Monitor" ;
-  ex:observesProperty ex:current ;
-  ex:observesProperty ex:power ;
-  ex:category "sensor" ;
-  ex:kind "current" ;
+  ex:partKind "current" ;
   ex:manufacturer "Texas Instruments" ;
   ex:mpn "INA226" ;
+  sosa:observesProperty ex:current ;
+  sosa:observesProperty ex:voltage ;
+  sosa:observesProperty ex:power ;
+  sosa:hasFeatureOfInterest ex:circuit_power ;
+  ex:hasInterface     ex:I2C ;
   ex:vccMin "2.7"^^xsd:decimal ;
   ex:vccMax "5.5"^^xsd:decimal ;
   ex:i2cAddrDefault "I2C" ;
+  ex:offerPrice "18.779"^^xsd:decimal ;
+  ex:priceCurrency "USD" ;
   ex:notes "Shunt-based current/power monitor" .
+
+ex:Infrared_Flame_Sensor_Module a ex:SensorPart ;
+  rdfs:label "Infrared Flame Sensor Module" ;
+  ex:partKind "flame" ;
+  ex:manufacturer "Generic" ;
+  sosa:observesProperty ex:flame_presence ;
+  sosa:hasFeatureOfInterest ex:room_air ;
+  ex:vccMin "3.3"^^xsd:decimal ;
+  ex:vccMax "5.0"^^xsd:decimal ;
+  ex:i2cAddrDefault "ADC|DIGITAL" ;
+  ex:notes "Analog + digital comparator; typical Arduino module" .
+
+ex:Infrared_Proximity_Sensor a ex:SensorPart ;
+  rdfs:label "Infrared Proximity Sensor" ;
+  ex:partKind "generic" ;
+  ex:manufacturer "Lionel Michel" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Intel_Edison_Arduinobreakout a ex:ControllerBoard ;
+  rdfs:label "Intel Edison Arduinobreakout" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "fabian althaus" ;
+  ex:productURL "http://www.intel.com/edison"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ITG_3200 a ex:SensorPart ;
+  rdfs:label "ITG-3200" ;
+  ex:partKind "gyro" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:JeeNode_wireless_microcontroller a ex:ControllerBoard ;
+  rdfs:label "JeeNode wireless microcontroller" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "Jean-Claude Wippler" ;
+  ex:productURL "http://jeelabs.net/projects/hardware/wiki/JeeNode"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:KA78R05_Low_Dropout_Voltage_Regulator a ex:PowerSupply ;
+  rdfs:label "KA78R05 Low Dropout Voltage Regulator" ;
+  ex:partKind "regulator" ;
+  ex:manufacturer "Carlos Hansen Mendoza" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:KENT_LCD_CONN a ex:ActuatorPart ;
+  rdfs:label "KENT_LCD_CONN" ;
+  ex:partKind "display_lcd" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:L298 a ex:ActuatorPart ;
+  rdfs:label "L298" ;
+  ex:partKind "motor_driver" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:L298_BRIDGE_DRIVER a ex:ActuatorPart ;
+  rdfs:label "L298_BRIDGE_DRIVER" ;
+  ex:partKind "motor_driver" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LASSEN_IQ_GPS a ex:SensorPart ;
+  rdfs:label "LASSEN_IQ_GPS" ;
+  ex:partKind "gps" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LCD_16X2 a ex:ActuatorPart ;
+  rdfs:label "LCD-16X2" ;
+  ex:partKind "display_lcd" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LCD_BACKLIGHT_PADS a ex:ActuatorPart ;
+  rdfs:label "LCD_BACKLIGHT_PADS" ;
+  ex:partKind "display_lcd" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LCD_CFAX a ex:ActuatorPart ;
+  rdfs:label "LCD_CFAX" ;
+  ex:partKind "display_lcd" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LCD_screen a ex:ActuatorPart ;
+  rdfs:label "LCD screen" ;
+  ex:partKind "display_lcd" ;
+  ex:manufacturer "Lionel Michel" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LDR_Module_Photoresistor a ex:SensorPart ;
+  rdfs:label "LDR Module (Photoresistor)" ;
+  ex:partKind "light" ;
+  ex:manufacturer "Generic" ;
+  sosa:observesProperty ex:illuminance ;
+  sosa:hasFeatureOfInterest ex:room_air ;
+  ex:hasInterface     ex:ADC ;
+  ex:lifecycle "Analog divider output" .
+
+ex:LED_BadgerArray a ex:ActuatorPart ;
+  rdfs:label "LED BadgerArray" ;
+  ex:partKind "led" ;
+  ex:manufacturer "f.althaus" ;
+  ex:productURL "https://learn.sparkfun.com/tutorials/badgerhack"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LED_BARGRAPH_10 a ex:ActuatorPart ;
+  rdfs:label "LED_BARGRAPH_10" ;
+  ex:partKind "led" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LED_Dot_Matrix_18mm_0_7_INCH a ex:ActuatorPart ;
+  rdfs:label "LED Dot Matrix 18mm (0.7 INCH)" ;
+  ex:partKind "led" ;
+  ex:manufacturer "Stefan Hermann" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LED_Matrix_Serial_Interface_Red_Green_Blue a ex:ActuatorPart ;
+  rdfs:label "LED Matrix - Serial Interface - Red/Green/Blue" ;
+  ex:partKind "led" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/760"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LED_RING a ex:ActuatorPart ;
+  rdfs:label "LED_RING" ;
+  ex:partKind "led" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LEDs a ex:ActuatorPart ;
+  rdfs:label "LEDs" ;
+  ex:partKind "led" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LED_Tactile_Button_Breakout_v10 a ex:ActuatorPart ;
+  rdfs:label "LED Tactile Button Breakout v10" ;
+  ex:partKind "led" ;
+  ex:manufacturer "SFE and Fritzing" ;
+  ex:productURL "https://www.sparkfun.com/products/10467"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LilyPad_Accelerometer_ADXL335 a ex:ControllerBoard ;
+  rdfs:label "LilyPad Accelerometer ADXL335" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "Fabian Althaus" ;
+  ex:productURL "http://www.sparkfun.com/products/9267"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Lilypad_Arduino_Board a ex:ControllerBoard ;
+  rdfs:label "Lilypad Arduino Board" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "f.althaus" ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoBoardLilyPad"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LilyPad_Arduino_Simple_Board a ex:ControllerBoard ;
+  rdfs:label "LilyPad Arduino Simple Board" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "althaus" ;
+  ex:productURL "https://www.sparkfun.com/products/10274"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LilyPad_Arduino_USB a ex:ControllerBoard ;
+  rdfs:label "LilyPad Arduino USB" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "althaus" ;
+  ex:productURL "http://arduino.cc/en/Main/ArduinoBoardLilyPadUSB"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Lilypad_Battery_Connect a ex:ControllerBoard ;
+  rdfs:label "Lilypad Battery Connect" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "Fabian Althaus" ;
+  ex:productURL "http://www.sparkfun.com/products/10083"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LilyPad_Button_Board a ex:ControllerBoard ;
+  rdfs:label "LilyPad Button Board" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "Fabian Althaus" ;
+  ex:productURL "http://www.sparkfun.com/products/8776"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LilyPad_Buzzer a ex:ActuatorPart ;
+  rdfs:label "LilyPad Buzzer" ;
+  ex:partKind "actuator" ;
+  ex:manufacturer "Fabian Althaus" ;
+  ex:productURL "http://www.sparkfun.com/products/8463"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LilyPad_Coin_Cell_Battery_Holder a ex:ControllerBoard ;
+  rdfs:label "LilyPad Coin Cell Battery Holder" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "f.althaus" ;
+  ex:productURL "http://www.sparkfun.com/products/10730"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LilyPad_LED a ex:ControllerBoard ;
+  rdfs:label "LilyPad LED" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "f.althaus" ;
+  ex:productURL "http://www.sparkfun.com/products/10081"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LilyPad_Light_Sensor a ex:SensorPart ;
+  rdfs:label "LilyPad Light Sensor" ;
+  ex:partKind "light" ;
+  ex:manufacturer "f.althaus" ;
+  ex:productURL "http://www.sparkfun.com/products/8464"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LilyPad_LiPower a ex:ControllerBoard ;
+  rdfs:label "LilyPad LiPower" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "f.althaus" ;
+  ex:productURL "https://www.sparkfun.com/products/11260"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Lilypad_Power_Supply a ex:ControllerBoard ;
+  rdfs:label "Lilypad Power Supply" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "f.althaus" ;
+  ex:productURL "http://www.sparkfun.com/products/11259"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LilyPad_Simple_Power a ex:ControllerBoard ;
+  rdfs:label "LilyPad Simple Power" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "Fabian Althaus" ;
+  ex:productURL "http://www.sparkfun.com/products/10085"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LilyPad_Slide_Switch a ex:ControllerBoard ;
+  rdfs:label "LilyPad Slide Switch" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "Fabian Althaus" ;
+  ex:productURL "http://www.sparkfun.com/products/9350"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LilyPad_Temperature_Sensor a ex:SensorPart ;
+  rdfs:label "LilyPad Temperature Sensor" ;
+  ex:partKind "sensor" ;
+  ex:manufacturer "Fabian Althaus" ;
+  ex:productURL "http://www.sparkfun.com/products/8777"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LilyPad_Tri_Color_LED a ex:ControllerBoard ;
+  rdfs:label "LilyPad Tri-Color LED" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "Fabian Althaus" ;
+  ex:productURL "http://www.sparkfun.com/products/8467"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Lilypad_Vibe_Motor a ex:ActuatorPart ;
+  rdfs:label "Lilypad Vibe Motor" ;
+  ex:partKind "generic" ;
+  ex:manufacturer "J.A. Korten - JKSOFT Educational" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LilyPad_XBee a ex:ControllerBoard ;
+  rdfs:label "LilyPad XBee" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "f.althaus" ;
+  ex:productURL "http://www.sparkfun.com/products/8937"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Limit_Switch_Endstop a ex:SensorPart ;
+  rdfs:label "Limit Switch (Endstop)" ;
+  ex:partKind "contact" ;
+  ex:manufacturer "Generic" ;
+  sosa:observesProperty ex:mechanical_limit ;
+  sosa:hasFeatureOfInterest ex:garage_door ;
+  ex:hasInterface     ex:GPIO ;
+  ex:productURL "https://a.co/d/2GAOnEG"^^xsd:anyURI .
+
+ex:LIPO_1000mAh a ex:PowerSupply ;
+  rdfs:label "LIPO-1000mAh" ;
+  ex:partKind "battery" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LIPO_110mAh a ex:PowerSupply ;
+  rdfs:label "LIPO-110mAh" ;
+  ex:partKind "battery" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LIPO_2000mAh a ex:PowerSupply ;
+  rdfs:label "LIPO-2000mAh" ;
+  ex:partKind "battery" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LIS302DL a ex:SensorPart ;
+  rdfs:label "LIS302DL" ;
+  ex:partKind "accelerometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LIS331 a ex:SensorPart ;
+  rdfs:label "LIS331" ;
+  ex:partKind "accelerometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LIS3LV02DQ a ex:SensorPart ;
+  rdfs:label "LIS3LV02DQ" ;
+  ex:partKind "accelerometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LM34_Temperature_Sensor a ex:SensorPart ;
+  rdfs:label "LM34 Temperature Sensor" ;
+  ex:partKind "sensor" ;
+  ex:manufacturer "Stefan Hermann" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LM35_Temperature_Sensor a ex:SensorPart ;
+  rdfs:label "LM35 Temperature Sensor" ;
+  ex:partKind "sensor" ;
+  ex:manufacturer "Stefan Hermann" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Logic_Level_Converter a ex:PowerSupply ;
+  rdfs:label "Logic Level Converter" ;
+  ex:partKind "regulator" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/8745"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Loudspeaker a ex:ActuatorPart ;
+  rdfs:label "Loudspeaker" ;
+  ex:partKind "buzzer" ;
+  ex:manufacturer "Lionel Michel" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LSM303_Breakout_Board_Tilt_Compensated_Compass a ex:SensorPart ;
+  rdfs:label "LSM303 Breakout Board - Tilt-Compensated Compass" ;
+  ex:partKind "magnetometer" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9810"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Luxeon_LED a ex:SensorPart ;
+  rdfs:label "Luxeon LED" ;
+  ex:partKind "light" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:LUXEON_REBEL a ex:SensorPart ;
+  rdfs:label "LUXEON-REBEL" ;
+  ex:partKind "light" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:M5450_LED_Driver a ex:ActuatorPart ;
+  rdfs:label "M5450 LED Driver" ;
+  ex:partKind "led" ;
+  ex:manufacturer "Christopher Mann" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:MAG3110 a ex:SensorPart ;
+  rdfs:label "MAG3110" ;
+  ex:partKind "magnetometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:MAGJACK a ex:SensorPart ;
+  rdfs:label "MAGJACK" ;
+  ex:partKind "magnetometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:MAGJACK_2 a ex:SensorPart ;
+  rdfs:label "MAGJACK-2" ;
+  ex:partKind "magnetometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:MAGJACK_POE a ex:SensorPart ;
+  rdfs:label "MAGJACK-POE" ;
+  ex:partKind "magnetometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:MAGNET a ex:SensorPart ;
+  rdfs:label "MAGNET" ;
+  ex:partKind "magnetometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:MAX1555_Lithium_Charger_IC a ex:PowerSupply ;
+  rdfs:label "MAX1555 Lithium Charger IC" ;
+  ex:partKind "charger" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Max_Power_IR_LED_Kit a ex:ActuatorPart ;
+  rdfs:label "Max Power IR LED Kit" ;
+  ex:partKind "led" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/10732"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:MCP73831 a ex:PowerSupply ;
+  rdfs:label "MCP73831" ;
+  ex:partKind "charger" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:MICROCONTROLLER a ex:ControllerBoard ;
+  rdfs:label "MICROCONTROLLER" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Microphone a ex:SensorPart ;
+  rdfs:label "Microphone" ;
+  ex:partKind "microphone" ;
+  ex:manufacturer "Lionel Michel" ;
+  ex:notes "imported_from_fritzing" .
 
 ex:Micro_Submersible_Water_Pump a ex:ActuatorPart ;
   rdfs:label "Micro Submersible Water Pump" ;
-  ex:actsOnProperty   ex:fluid_flow ;
-  ex:category "actuator" ;
-  ex:kind "pump" ;
+  ex:partKind "pump" ;
   ex:manufacturer "Generic" ;
-  ex:vccMin "3"^^xsd:decimal ;
-  ex:vccMax "5"^^xsd:decimal ;
+  sosa:actsOnProperty   ex:fluid_flow ;
+  sosa:hasFeatureOfInterest ex:water_flow ;
+  ex:vccMin "3.0"^^xsd:decimal ;
+  ex:vccMax "5.0"^^xsd:decimal ;
   ex:i2cAddrDefault "POWER_SWITCHED_BY_RELAY" ;
   ex:notes "Drive via relay or MOSFET" .
 
-ex:Assorted_LEDs_Kit a ex:Part ;
-  rdfs:label "Assorted LEDs Kit" ;
-  ex:actsOnProperty   ex:brightness ;
-  ex:hasInterface     ex:GPIO ;
-  ex:category "tooling" ;
-  ex:kind "led_kit" ;
-  ex:manufacturer "ELEGOO" ;
-  ex:lifecycle "Diffused flashing LEDs" .
+ex:MMA7260 a ex:SensorPart ;
+  rdfs:label "MMA7260" ;
+  ex:partKind "accelerometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
 
-ex:Resistor_Assortment_Kit a ex:Part ;
-  rdfs:label "Resistor Assortment Kit" ;
-  ex:category "tooling" ;
-  ex:kind "resistor_kit" ;
-  ex:manufacturer "ELEGOO" .
+ex:MMA7361 a ex:SensorPart ;
+  rdfs:label "MMA7361" ;
+  ex:partKind "accelerometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
 
-ex:Breadboard a ex:Part ;
-  rdfs:label "Breadboard" ;
-  ex:category "tooling" ;
-  ex:kind "breadboard" ;
-  ex:manufacturer "Generic" .
+ex:Motor_Driver_1A_Dual_TB6612FNG a ex:ActuatorPart ;
+  rdfs:label "Motor Driver 1A Dual TB6612FNG" ;
+  ex:partKind "motor_driver" ;
+  ex:manufacturer "SFE and Fritzing" ;
+  ex:productURL "https://www.sparkfun.com/products/9457"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
 
-ex:Soldering_Kit a ex:Part ;
-  rdfs:label "Soldering Kit" ;
-  ex:category "tooling" ;
-  ex:kind "soldering_kit" ;
+ex:MPR121 a ex:SensorPart ;
+  rdfs:label "MPR121" ;
+  ex:partKind "touch" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:MPR121_Breakout a ex:SensorPart ;
+  rdfs:label "MPR121 Breakout" ;
+  ex:partKind "touch" ;
+  ex:manufacturer "fabian althaus" ;
+  ex:productURL "https://www.sparkfun.com/products/9695"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:MPX2010_pressure_sensor a ex:SensorPart ;
+  rdfs:label "MPX2010 pressure sensor" ;
+  ex:partKind "generic" ;
+  ex:manufacturer "Andre van Ooijen" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:MPX4250AP_pressure_sensor a ex:SensorPart ;
+  rdfs:label "MPX4250AP pressure sensor" ;
+  ex:partKind "generic" ;
+  ex:manufacturer "Andre van Ooijen - Old Grey mod" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Nokia_6100_Color_LCD a ex:ActuatorPart ;
+  rdfs:label "Nokia 6100 Color LCD" ;
+  ex:partKind "display_lcd" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:OMRON_PCB_Power_Relay_G5LE a ex:ActuatorPart ;
+  rdfs:label "OMRON PCB Power Relay – G5LE" ;
+  ex:partKind "actuator" ;
+  ex:manufacturer "nail" ;
+  ex:productURL "http://www.omron.com/ecb/products/pry/121/g5le.html"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Passive_Buzzer_3_3_5V a ex:ActuatorPart ;
+  rdfs:label "Passive Buzzer 3.3–5V" ;
+  ex:partKind "buzzer" ;
+  ex:manufacturer "DUTTY" ;
+  sosa:actsOnProperty   ex:acoustic_signal ;
+  sosa:hasFeatureOfInterest ex:alarm_device ;
+  ex:vccMin "3.3"^^xsd:decimal ;
+  ex:vccMax "5.0"^^xsd:decimal ;
+  ex:i2cAddrDefault "GPIO" .
+
+ex:PHOTOCELL a ex:SensorPart ;
+  rdfs:label "PHOTOCELL" ;
+  ex:partKind "light" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Photocell_LDR a ex:SensorPart ;
+  rdfs:label "Photocell (LDR)" ;
+  ex:partKind "sensor" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Photon a ex:ControllerBoard ;
+  rdfs:label "Photon" ;
+  ex:partKind "particle" ;
+  ex:manufacturer "Brett Walach,Fabian Althaus" ;
+  ex:productURL "https://www.particle.io"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:PHOTOTRANSISTOR_REFLECTIVE_OBJECT_SENSOR a ex:SensorPart ;
+  rdfs:label "PHOTOTRANSISTOR REFLECTIVE OBJECT SENSOR" ;
+  ex:partKind "generic" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Piezo_Speaker a ex:ActuatorPart ;
+  rdfs:label "Piezo Speaker" ;
+  ex:partKind "buzzer" ;
+  ex:manufacturer "Lionel Michel" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:PIR_Motion_Sensor_HC_SR501 a ex:SensorPart ;
+  rdfs:label "PIR Motion Sensor HC-SR501" ;
+  ex:partKind "motion" ;
   ex:manufacturer "Generic" ;
-  ex:priceCurrency "https://a.co/d/f3KsYLi" .
+  ex:mpn "HC-SR501" ;
+  sosa:observesProperty ex:motion ;
+  sosa:hasFeatureOfInterest ex:human_presence ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "4.5"^^xsd:decimal ;
+  ex:vccMax "20.0"^^xsd:decimal ;
+  ex:logicLevel "3.3"^^xsd:decimal ;
+  ex:i2cAddrDefault "GPIO" ;
+  ex:notes "Adjustable sensitivity/time" .
+
+ex:PowerBoost_500_Charger a ex:PowerSupply ;
+  rdfs:label "PowerBoost 500 Charger" ;
+  ex:partKind "regulator" ;
+  ex:manufacturer "Dean Cording fixed by FA" ;
+  ex:productURL "https://www.adafruit.com/products/1944"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Power_Cell_LiPo_Charger_Booster a ex:PowerSupply ;
+  rdfs:label "Power Cell LiPo Charger/Booster" ;
+  ex:partKind "battery" ;
+  ex:manufacturer "SFE and Fritzing" ;
+  ex:productURL "https://www.sparkfun.com/products/11231"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Pre_Assembled_Female_BNC a ex:ActuatorPart ;
+  rdfs:label "Pre-Assembled Female BNC" ;
+  ex:partKind "led" ;
+  ex:manufacturer "Atlas Scientific" ;
+  ex:productURL "https://www.atlas-scientific.com/product_pages/components/bnc.html"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:QuadStepper a ex:ActuatorPart ;
+  rdfs:label "QuadStepper" ;
+  ex:partKind "actuator" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/10507"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Raspberry_Pi_2 a ex:ControllerBoard ;
+  rdfs:label "Raspberry Pi 2" ;
+  ex:partKind "rpi" ;
+  ex:manufacturer "Fabian Althaus" ;
+  ex:productURL "http://www.raspberrypi.org/"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Raspberry_Pi_3 a ex:ControllerBoard ;
+  rdfs:label "Raspberry Pi 3" ;
+  ex:partKind "rpi" ;
+  ex:manufacturer "Anudit Nagar" ;
+  ex:productURL "http://www.raspberrypi.org/"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Raspberry_Pi_A a ex:ControllerBoard ;
+  rdfs:label "Raspberry Pi A" ;
+  ex:partKind "rpi" ;
+  ex:manufacturer "Fabian Althaus" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Raspberry_Pi_B a ex:ControllerBoard ;
+  rdfs:label "Raspberry Pi B+" ;
+  ex:partKind "rpi" ;
+  ex:manufacturer "Fabian Althaus" ;
+  ex:productURL "http://www.raspberrypi.org/"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Raspberry_Pi_B_rev1 a ex:ControllerBoard ;
+  rdfs:label "Raspberry Pi B rev1" ;
+  ex:partKind "rpi" ;
+  ex:manufacturer "Fabian Althaus" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Raspberry_Pi_B_rev2 a ex:ControllerBoard ;
+  rdfs:label "Raspberry Pi B rev2" ;
+  ex:partKind "rpi" ;
+  ex:manufacturer "Fabian Althaus" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Raspberry_Pi_Shield a ex:ControllerBoard ;
+  rdfs:label "Raspberry Pi Shield" ;
+  ex:partKind "rpi" ;
+  ex:manufacturer "Fabian Althaus" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Raspberry_Pi_Zero a ex:ControllerBoard ;
+  rdfs:label "Raspberry Pi Zero" ;
+  ex:partKind "rpi" ;
+  ex:manufacturer "Anudit Nagar (modifed by Peter Van Epp Jan 2018" ;
+  ex:productURL "http://www.raspberrypi.org/"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Real_Time_Clock_Module_DS1307_RTC_Breakout_Board a ex:SensorPart ;
+  rdfs:label "Real Time Clock Module - DS1307 RTC Breakout Board" ;
+  ex:partKind "rtc" ;
+  ex:manufacturer "Mike" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Red_LED_3mm a ex:ActuatorPart ;
+  rdfs:label "Red LED - 3mm" ;
+  ex:partKind "led" ;
+  ex:manufacturer "Stefan Hermann" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Red_LED_5mm a ex:ActuatorPart ;
+  rdfs:label "Red LED - 5mm" ;
+  ex:partKind "led" ;
+  ex:manufacturer "Brendan Howell" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Reed_Switch_Door_State a ex:SensorPart ;
+  rdfs:label "Reed Switch (Door State)" ;
+  ex:partKind "contact" ;
+  ex:manufacturer "Generic" ;
+  sosa:observesProperty ex:door_state ;
+  sosa:hasFeatureOfInterest ex:garage_door ;
+  ex:hasInterface     ex:GPIO ;
+  ex:productURL "https://a.co/d/1dbrfWd"^^xsd:anyURI .
+
+ex:RELAY a ex:ActuatorPart ;
+  rdfs:label "RELAY" ;
+  ex:partKind "actuator" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:RELAY a ex:ActuatorPart ;
+  rdfs:label "RELAY" ;
+  ex:partKind "actuator" ;
+  ex:manufacturer "www.squarewolf.nl, f.althaus" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Relay a ex:ActuatorPart ;
+  rdfs:label "Relay" ;
+  ex:partKind "actuator" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:RELAY_2 a ex:ActuatorPart ;
+  rdfs:label "RELAY-2" ;
+  ex:partKind "actuator" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Relay_Module_4_Channel a ex:ActuatorPart ;
+  rdfs:label "Relay Module (4-Channel)" ;
+  ex:partKind "relay" ;
+  ex:manufacturer "Generic" ;
+  sosa:actsOnProperty   ex:power_state ;
+  sosa:hasFeatureOfInterest ex:appliance_power ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "5.0"^^xsd:decimal ;
+  ex:vccMax "5.0"^^xsd:decimal ;
+  ex:i2cAddrDefault "GPIO" .
+
+ex:RELAY_SOLIDSTATE a ex:ActuatorPart ;
+  rdfs:label "RELAY-SOLIDSTATE" ;
+  ex:partKind "actuator" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:RGB_LED_4_legs a ex:ActuatorPart ;
+  rdfs:label "RGB LED - (4 legs)" ;
+  ex:partKind "led_rgb" ;
+  ex:manufacturer "Adafruit Industries" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:RGB_LED_6_legs a ex:ActuatorPart ;
+  rdfs:label "RGB LED (6 legs)" ;
+  ex:partKind "led_rgb" ;
+  ex:manufacturer "Lionel Michel" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:RGB_LED_com_anode_rbg a ex:ActuatorPart ;
+  rdfs:label "RGB LED (com. anode, rbg)" ;
+  ex:partKind "led_rgb" ;
+  ex:manufacturer "stefanhermann" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:RGB_LED_com_cathode_rbg a ex:ActuatorPart ;
+  rdfs:label "RGB LED (com. cathode, rbg)" ;
+  ex:partKind "led_rgb" ;
+  ex:manufacturer "stefanhermann" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:RGB_LED_com_cathode_rgb a ex:ActuatorPart ;
+  rdfs:label "RGB LED (com. cathode, rgb)" ;
+  ex:partKind "led_rgb" ;
+  ex:manufacturer "stefanhermann" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Rotoshield_Motor_driver_shield_for_Arduino a ex:ActuatorPart ;
+  rdfs:label "Rotoshield - Motor driver shield for Arduino" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "Snootlab" ;
+  ex:productURL "http://shop.snootlab.com/shields-snootlab/87-rotoshield.html"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:RTC_Module_DS3231 a ex:ControllerBoard ;
+  rdfs:label "RTC Module (DS3231)" ;
+  ex:partKind "rtc_module" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "DS3231" ;
+  sosa:observesProperty ex:timekeeping ;
+  sosa:hasFeatureOfInterest ex:system_time ;
+  ex:vccMin "3.3"^^xsd:decimal ;
+  ex:vccMax "5.0"^^xsd:decimal ;
+  ex:i2cAddrDefault "I2C" .
+
+ex:SHT1x_Breakout a ex:SensorPart ;
+  rdfs:label "SHT1x-Breakout" ;
+  ex:partKind "temp_humidity" ;
+  ex:manufacturer "f.althaus" ;
+  ex:productURL "https://www.sparkfun.com/products/13683"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:SHT1x_Humdity_Sensor a ex:SensorPart ;
+  rdfs:label "SHT1x Humdity Sensor" ;
+  ex:partKind "temp_humidity" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:SMARTCARD a ex:SensorPart ;
+  rdfs:label "SMARTCARD" ;
+  ex:partKind "rtc" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:SMD_RGB_LED_WS2812 a ex:ActuatorPart ;
+  rdfs:label "SMD RGB LED (WS2812)" ;
+  ex:partKind "led_rgb" ;
+  ex:manufacturer "fabian althaus" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Soil_Moisture_Sensor a ex:SensorPart ;
+  rdfs:label "Soil Moisture Sensor" ;
+  ex:partKind "moisture" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "Capacitive Soil v1.2" ;
+  sosa:observesProperty ex:soil_moisture ;
+  sosa:hasFeatureOfInterest ex:soil ;
+  ex:hasInterface     ex:ADC ;
+  ex:vccMin "3.3"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:productURL "https://www.sparkfun.com/products/13322"^^xsd:anyURI ;
+  ex:notes "Capacitive type (corrosion resistant)" .
+
+ex:SOLAR_IXYS a ex:PowerSupply ;
+  rdfs:label "SOLAR-IXYS" ;
+  ex:partKind "solar" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Solenoid a ex:ActuatorPart ;
+  rdfs:label "Solenoid" ;
+  ex:partKind "pump" ;
+  ex:manufacturer "Lionel Michel" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:SparkFun_ESP8266_Thing a ex:ControllerBoard ;
+  rdfs:label "SparkFun ESP8266 Thing" ;
+  ex:partKind "esp8266" ;
+  ex:manufacturer "f.althaus" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:ADC ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "2.5"^^xsd:decimal ;
+  ex:vccMax "3.6"^^xsd:decimal ;
+  ex:logicLevel "3.3"^^xsd:decimal ;
+  ex:productURL "https://www.sparkfun.com/products/13231"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:SparkFun_IMU_Breakout_MPU_9250 a ex:SensorPart ;
+  rdfs:label "SparkFun IMU Breakout - MPU-9250" ;
+  ex:partKind "imu" ;
+  ex:manufacturer "fredrmag" ;
+  ex:productURL "https://www.sparkfun.com/products/13762"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:SparkFun_Load_Sensor_Combinator a ex:SensorPart ;
+  rdfs:label "SparkFun Load Sensor Combinator" ;
+  ex:partKind "generic" ;
+  ex:manufacturer "joev.noise" ;
+  ex:productURL "https://www.sparkfun.com/products/13281"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:SparkFun_RPI_1031_Tilt_a_Whirl_Breakout a ex:ControllerBoard ;
+  rdfs:label "SparkFun RPI-1031 Tilt-a-Whirl Breakout" ;
+  ex:partKind "rpi" ;
+  ex:manufacturer "SparkFun and Fritzing toolkit" ;
+  ex:productURL "https://www.sparkfun.com/products/10621"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:SPEAKER a ex:ActuatorPart ;
+  rdfs:label "SPEAKER" ;
+  ex:partKind "buzzer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Stepper_Motor_Bipolar a ex:ActuatorPart ;
+  rdfs:label "Stepper Motor - Bipolar" ;
+  ex:partKind "motor_stepper" ;
+  ex:manufacturer "Peter Boman" ;
+  sosa:actsOnProperty   ex:angular_position ;
+  sosa:hasFeatureOfInterest ex:linear_axis ;
+  ex:hasInterface     ex:DRIVEN_BY_DRIVER ;
+  ex:vccMin "12.0"^^xsd:decimal ;
+  ex:vccMax "24.0"^^xsd:decimal ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Stepper_Motor_Unipolar a ex:ActuatorPart ;
+  rdfs:label "Stepper Motor - Unipolar" ;
+  ex:partKind "motor_stepper" ;
+  ex:manufacturer "Peter Boman" ;
+  sosa:actsOnProperty   ex:angular_position ;
+  sosa:hasFeatureOfInterest ex:linear_axis ;
+  ex:hasInterface     ex:DRIVEN_BY_DRIVER ;
+  ex:vccMin "12.0"^^xsd:decimal ;
+  ex:vccMax "24.0"^^xsd:decimal ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ST_GYRO_PR a ex:SensorPart ;
+  rdfs:label "ST-GYRO-PR" ;
+  ex:partKind "gyro" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ST_GYRO_PY a ex:SensorPart ;
+  rdfs:label "ST-GYRO-PY" ;
+  ex:partKind "gyro" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:STM32F103 a ex:ControllerBoard ;
+  rdfs:label "STM32F103" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "jonathan" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:STM32F103C8T6_blue_mini_board a ex:ControllerBoard ;
+  rdfs:label "STM32F103C8T6 blue mini board" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "Jungho Park (modified by vanepp jan 2019)" ;
+  ex:productURL "https://wiki.stm32duino.com/index.php?title=Blue_Pill"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:STM32F40x a ex:ControllerBoard ;
+  rdfs:label "STM32F40x" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "Frode Lillerud" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:STM32_Nucleo_boards a ex:ControllerBoard ;
+  rdfs:label "STM32 Nucleo boards" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "fabian althaus" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Super_Flux_LED_blue a ex:SensorPart ;
+  rdfs:label "Super Flux LED blue" ;
+  ex:partKind "light" ;
+  ex:manufacturer "stefanhermann" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Super_Flux_RGB_LED_com_anode a ex:SensorPart ;
+  rdfs:label "Super Flux RGB LED (com. anode)" ;
+  ex:partKind "light" ;
+  ex:manufacturer "stefanhermann" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Super_Flux_RGB_LED_com_cathode a ex:SensorPart ;
+  rdfs:label "Super Flux RGB LED (com. cathode)" ;
+  ex:partKind "light" ;
+  ex:manufacturer "stefanhermann" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Switching_step_up_voltage_regulator a ex:PowerSupply ;
+  rdfs:label "Switching step-up voltage regulator" ;
+  ex:partKind "regulator" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Teensy_2_0 a ex:ControllerBoard ;
+  rdfs:label "Teensy 2.0" ;
+  ex:partKind "teensy" ;
+  ex:manufacturer "Lionel Michel" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Teensy_2_0 a ex:ControllerBoard ;
+  rdfs:label "Teensy++ 2.0" ;
+  ex:partKind "teensy" ;
+  ex:manufacturer "lionelmichel" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Teensy_3_0 a ex:ControllerBoard ;
+  rdfs:label "Teensy 3.0" ;
+  ex:partKind "teensy" ;
+  ex:manufacturer "Fabian Althaus" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Teensy_3_1 a ex:ControllerBoard ;
+  rdfs:label "Teensy 3.1" ;
+  ex:partKind "teensy" ;
+  ex:manufacturer "Fabian Althaus modified by Ouinouin" ;
+  ex:productURL "http://www.pjrc.com/teensy"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:TEMPERATURE_SENSOR a ex:SensorPart ;
+  rdfs:label "TEMPERATURE-SENSOR" ;
+  ex:partKind "sensor" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Temperature_Sensor_Thermistor a ex:SensorPart ;
+  rdfs:label "Temperature Sensor (Thermistor)" ;
+  ex:partKind "sensor" ;
+  ex:manufacturer "Brendan Howell" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Textile_Analog_Pressure_Sensor a ex:SensorPart ;
+  rdfs:label "Textile Analog Pressure Sensor" ;
+  ex:partKind "generic" ;
+  ex:manufacturer "Riccardo Marchesi" ;
+  ex:productURL "http://www.plugandwear.com/default.asp?mod=product&cat_id=86&product_id=223"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Textile_Stretch_Sensor a ex:SensorPart ;
+  rdfs:label "Textile Stretch Sensor" ;
+  ex:partKind "generic" ;
+  ex:manufacturer "Riccardo Marchesi" ;
+  ex:productURL "http://www.plugandwear.com/default.asp?mod=product&cat_id=86&product_id=167"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:TMP01_Low_Power_Programmable_Temperature_Controller a ex:SensorPart ;
+  rdfs:label "TMP01 - Low Power, Programmable Temperature Controller" ;
+  ex:partKind "sensor" ;
+  ex:manufacturer "Analog Devices" ;
+  ex:productURL "http://www.analog.com/tmp01"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:TMP102 a ex:SensorPart ;
+  rdfs:label "TMP102" ;
+  ex:partKind "temp_humidity" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:TMP36 a ex:SensorPart ;
+  rdfs:label "TMP36" ;
+  ex:partKind "temp_humidity" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:TMP36_Temperature_Sensor a ex:SensorPart ;
+  rdfs:label "TMP36 Temperature Sensor" ;
+  ex:partKind "sensor" ;
+  ex:manufacturer "Jonathan Cohen" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Tri_Axis_Gyro_Breakout_L3G4200D a ex:SensorPart ;
+  rdfs:label "Tri-Axis Gyro Breakout - L3G4200D" ;
+  ex:partKind "gyro" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/10612"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Tri_Color_LED_SMD a ex:ActuatorPart ;
+  rdfs:label "Tri-Color LED SMD" ;
+  ex:partKind "led" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Triple_Axis_Accelerometer a ex:SensorPart ;
+  rdfs:label "Triple Axis Accelerometer" ;
+  ex:partKind "accelerometer" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Triple_Axis_Accelerometer_Breakout_ADXL335 a ex:SensorPart ;
+  rdfs:label "Triple Axis Accelerometer Breakout - ADXL335" ;
+  ex:partKind "accelerometer" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9269"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Triple_Axis_Accelerometer_Breakout_ADXL345 a ex:SensorPart ;
+  rdfs:label "Triple Axis Accelerometer Breakout - ADXL345" ;
+  ex:partKind "accelerometer" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9836"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Triple_Axis_Gyro_Breakout_ITG_3200 a ex:SensorPart ;
+  rdfs:label "Triple Axis Gyro Breakout ITG-3200" ;
+  ex:partKind "gyro" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/9801"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Triple_Axis_Magnetometer_HMC5883_Breakout a ex:SensorPart ;
+  rdfs:label "Triple Axis Magnetometer - HMC5883 Breakout" ;
+  ex:partKind "magnetometer" ;
+  ex:manufacturer "SparkFun" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Ultrasonic_Sensor_HC_SR04 a ex:SensorPart ;
+  rdfs:label "Ultrasonic Sensor HC-SR04" ;
+  ex:partKind "distance" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "HC-SR04" ;
+  sosa:observesProperty ex:distance ;
+  sosa:hasFeatureOfInterest ex:obstacle_proximity ;
+  ex:hasInterface     ex:GPIO_TRIGGER_ECHO ;
+  ex:vccMin "4.5"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:logicLevel "5.0"^^xsd:decimal ;
+  ex:i2cAddrDefault "GPIO_TRIGGER_ECHO" ;
+  ex:rangeMin "2.0"^^xsd:decimal ;
+  ex:rangeMax "400.0"^^xsd:decimal ;
+  ex:units "cm" .
+
+ex:USB_LiPoly_Charger a ex:PowerSupply ;
+  rdfs:label "USB LiPoly Charger" ;
+  ex:partKind "battery" ;
+  ex:manufacturer "SparkFun" ;
+  ex:productURL "http://www.sparkfun.com/products/10161"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:VENUS634 a ex:SensorPart ;
+  rdfs:label "VENUS634" ;
+  ex:partKind "gps" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Venus638FLPX_L_GPS_Receiver a ex:SensorPart ;
+  rdfs:label "Venus638FLPX-L GPS Receiver" ;
+  ex:partKind "gps" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Vibration_Motor_ROB_08449 a ex:ActuatorPart ;
+  rdfs:label "Vibration Motor- ROB-08449" ;
+  ex:partKind "motor_dc" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Voltage_Regulator a ex:PowerSupply ;
+  rdfs:label "Voltage Regulator" ;
+  ex:partKind "regulator" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Voltage_Regulator_3_3V a ex:PowerSupply ;
+  rdfs:label "Voltage Regulator - 3.3V" ;
+  ex:partKind "regulator" ;
+  ex:manufacturer "Jenny" ;
+  ex:vccMin "3.3"^^xsd:decimal ;
+  ex:vccMax "3.3"^^xsd:decimal ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Voltage_Regulator_5V a ex:PowerSupply ;
+  rdfs:label "Voltage Regulator - 5V" ;
+  ex:partKind "regulator" ;
+  ex:manufacturer "Jenny" ;
+  ex:vccMin "5.0"^^xsd:decimal ;
+  ex:vccMax "5.0"^^xsd:decimal ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Voltage_Regulator_5V a ex:PowerSupply ;
+  rdfs:label "Voltage Regulator - 5V" ;
+  ex:partKind "regulator" ;
+  ex:manufacturer "Mr.T" ;
+  ex:vccMin "5.0"^^xsd:decimal ;
+  ex:vccMax "5.0"^^xsd:decimal ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Voltage_Regulator_LDO a ex:PowerSupply ;
+  rdfs:label "Voltage Regulator LDO" ;
+  ex:partKind "regulator" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Voltage_Regulator_LM1117 a ex:PowerSupply ;
+  rdfs:label "Voltage Regulator LM1117" ;
+  ex:partKind "regulator" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Voltage_Regulator_Variable a ex:PowerSupply ;
+  rdfs:label "Voltage Regulator - Variable" ;
+  ex:partKind "regulator" ;
+  ex:manufacturer "Jenny" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:WeMos_D1_Mini a ex:ControllerBoard ;
+  rdfs:label "WeMos D1 Mini" ;
+  ex:partKind "esp8266" ;
+  ex:manufacturer "Mike Causer, fixed:f.althaus" ;
+  ex:productURL "http://wemos.cc"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:WeMos_D1_Mini_1_Button_Shield a ex:ControllerBoard ;
+  rdfs:label "WeMos D1 Mini 1 Button Shield" ;
+  ex:partKind "esp8266" ;
+  ex:manufacturer "Mike Causer" ;
+  ex:productURL "http://wemos.cc"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:WeMos_D1_Mini_Battery_Shield a ex:ControllerBoard ;
+  rdfs:label "WeMos D1 Mini Battery Shield" ;
+  ex:partKind "esp8266" ;
+  ex:manufacturer "Mike Causer" ;
+  ex:productURL "http://wemos.cc"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:WeMos_D1_Mini_Dual_Base_Shield a ex:ControllerBoard ;
+  rdfs:label "WeMos D1 Mini Dual Base Shield" ;
+  ex:partKind "esp8266" ;
+  ex:manufacturer "Mike Causer" ;
+  ex:productURL "http://wemos.cc"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:WeMos_D1_Mini_Micro_SD_Shield a ex:ControllerBoard ;
+  rdfs:label "WeMos D1 Mini Micro SD Shield" ;
+  ex:partKind "esp8266" ;
+  ex:manufacturer "Mike Causer" ;
+  ex:productURL "http://wemos.cc"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:WeMos_D1_Mini_Motor_Shield a ex:ActuatorPart ;
+  rdfs:label "WeMos D1 Mini Motor Shield" ;
+  ex:partKind "generic" ;
+  ex:manufacturer "Mike Causer" ;
+  ex:productURL "http://wemos.cc"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:WeMos_D1_Mini_OLED_Shield a ex:ControllerBoard ;
+  rdfs:label "WeMos D1 Mini OLED Shield" ;
+  ex:partKind "esp8266" ;
+  ex:manufacturer "Mike Causer" ;
+  ex:productURL "http://wemos.cc"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:WeMos_D1_Mini_Protoboard_Shield a ex:ControllerBoard ;
+  rdfs:label "WeMos D1 Mini Protoboard Shield" ;
+  ex:partKind "esp8266" ;
+  ex:manufacturer "Mike Causer" ;
+  ex:productURL "http://wemos.cc"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:WeMos_D1_Mini_Relay_Shield a ex:ActuatorPart ;
+  rdfs:label "WeMos D1 Mini Relay Shield" ;
+  ex:partKind "actuator" ;
+  ex:manufacturer "Mike Causer" ;
+  ex:productURL "http://wemos.cc"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:WeMos_D1_Mini_Relay_Shield_V2 a ex:ActuatorPart ;
+  rdfs:label "WeMos D1 Mini Relay Shield V2" ;
+  ex:partKind "actuator" ;
+  ex:manufacturer "Mike Causer" ;
+  ex:productURL "http://wemos.cc"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:WeMos_D1_Mini_WS2812B_RGB_Shield a ex:ControllerBoard ;
+  rdfs:label "WeMos D1 Mini WS2812B RGB Shield" ;
+  ex:partKind "esp8266" ;
+  ex:manufacturer "Mike Causer" ;
+  ex:productURL "http://wemos.cc"^^xsd:anyURI ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Wiring_USB_Adapter a ex:PowerSupply ;
+  rdfs:label "Wiring USB Adapter" ;
+  ex:partKind "adapter" ;
+  ex:manufacturer "andre" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ws2812b a ex:ActuatorPart ;
+  rdfs:label "ws2812b" ;
+  ex:partKind "led_rgb" ;
+  ex:manufacturer "fabian althaus" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:XBee_USB_Mini_Adapter a ex:PowerSupply ;
+  rdfs:label "XBee USB Mini Adapter" ;
+  ex:partKind "adapter" ;
+  ex:manufacturer "Fritzing Part-o-matic" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:XMEGA_100 a ex:ControllerBoard ;
+  rdfs:label "XMEGA-100" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:XMEGA_A3 a ex:ControllerBoard ;
+  rdfs:label "XMEGA-A3" ;
+  ex:partKind "controller" ;
+  ex:manufacturer "www.fritzing.org" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:ZS_042_RTC_Module a ex:SensorPart ;
+  rdfs:label "ZS-042 RTC Module" ;
+  ex:partKind "rtc" ;
+  ex:manufacturer "Richard Bruneau, f.althaus" ;
+  ex:notes "imported_from_fritzing" .
+
+ex:Arduino_Pro_Micro_5V a ex:ControllerBoard ;
+  rdfs:label "Arduino Pro Micro 5V" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "SparkFun" ;
+  ex:mpn "DEV-12640" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:USB ;
+  ex:vccMin "4.5"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:logicLevel "5.0"^^xsd:decimal ;
+  ex:offerPrice "15.52"^^xsd:decimal ;
+  ex:priceCurrency "USD" ;
+  ex:notes "ATmega32U4" .
+
+ex:Arduino_Pro_Mini_3_3V a ex:ControllerBoard ;
+  rdfs:label "Arduino Pro Mini 3.3V" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "SparkFun" ;
+  ex:mpn "DEV-11114" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:vccMin "3.3"^^xsd:decimal ;
+  ex:vccMax "12.0"^^xsd:decimal ;
+  ex:logicLevel "3.3"^^xsd:decimal ;
+  ex:offerPrice "10.95"^^xsd:decimal ;
+  ex:priceCurrency "USD" ;
+  ex:notes "Requires FTDI programmer" .
+
+ex:Adafruit_Feather_M0_Basic a ex:ControllerBoard ;
+  rdfs:label "Adafruit Feather M0 Basic" ;
+  ex:partKind "feather" ;
+  ex:manufacturer "Adafruit" ;
+  ex:mpn "2772" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:USB ;
+  ex:vccMin "3.3"^^xsd:decimal ;
+  ex:vccMax "6.0"^^xsd:decimal ;
+  ex:logicLevel "3.3"^^xsd:decimal ;
+  ex:offerPrice "6.85"^^xsd:decimal ;
+  ex:priceCurrency "GBP" ;
+  ex:notes "ATSAMD21 Cortex M0" .
+
+ex:Adafruit_Trinket_M0 a ex:ControllerBoard ;
+  rdfs:label "Adafruit Trinket M0" ;
+  ex:partKind "microcontroller" ;
+  ex:manufacturer "Adafruit" ;
+  ex:mpn "3500" ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:USB ;
+  ex:vccMin "3.0"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:logicLevel "3.3"^^xsd:decimal ;
+  ex:offerPrice "5.746"^^xsd:decimal ;
+  ex:priceCurrency "USD" ;
+  ex:notes "Tiny Python board" .
+
+ex:BBC_micro_bit_v2 a ex:ControllerBoard ;
+  rdfs:label "BBC micro:bit v2" ;
+  ex:partKind "microbit" ;
+  ex:manufacturer "Micro:bit Foundation" ;
+  ex:mpn "MBIT-V2" ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:BLE ;
+  ex:vccMin "1.8"^^xsd:decimal ;
+  ex:vccMax "3.6"^^xsd:decimal ;
+  ex:logicLevel "3.3"^^xsd:decimal ;
+  ex:notes "Education focused, built-in LED matrix" .
+
+ex:Particle_Photon_2 a ex:ControllerBoard ;
+  rdfs:label "Particle Photon 2" ;
+  ex:partKind "particle" ;
+  ex:manufacturer "Particle" ;
+  ex:mpn "PHOTON2" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:WiFi ;
+  ex:vccMin "3.3"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:logicLevel "3.3"^^xsd:decimal ;
+  ex:notes "IoT Cloud integrated" .
+
+ex:NVIDIA_Jetson_Nano a ex:ControllerBoard ;
+  rdfs:label "NVIDIA Jetson Nano" ;
+  ex:partKind "sbc" ;
+  ex:manufacturer "NVIDIA" ;
+  ex:mpn "945-13450-0000-100" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:CSI ;
+  ex:hasInterface     ex:HDMI ;
+  ex:vccMin "5.0"^^xsd:decimal ;
+  ex:vccMax "5.0"^^xsd:decimal ;
+  ex:offerPrice "241.45"^^xsd:decimal ;
+  ex:priceCurrency "SGD" ;
+  ex:notes "AI/ML Edge Computing" .
+
+ex:BNO055_Absolute_Orientation a ex:SensorPart ;
+  rdfs:label "BNO055 Absolute Orientation" ;
+  ex:partKind "imu" ;
+  ex:manufacturer "Bosch" ;
+  ex:mpn "BNO055" ;
+  sosa:observesProperty ex:orientation ;
+  sosa:observesProperty ex:acceleration ;
+  sosa:observesProperty ex:magnetic_field ;
+  sosa:hasFeatureOfInterest ex:device_orientation ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:UART ;
+  ex:vccMin "2.4"^^xsd:decimal ;
+  ex:vccMax "3.6"^^xsd:decimal ;
+  ex:offerPrice "3.859"^^xsd:decimal ;
+  ex:priceCurrency "EUR" ;
+  ex:notes "On-board sensor fusion" .
+
+ex:SGP30_TVOC_eCO2_Gas a ex:SensorPart ;
+  rdfs:label "SGP30 TVOC/eCO2 Gas" ;
+  ex:partKind "gas" ;
+  ex:manufacturer "Sensirion" ;
+  ex:mpn "SGP30" ;
+  sosa:observesProperty ex:TVOC ;
+  sosa:observesProperty ex:eCO2 ;
+  sosa:hasFeatureOfInterest ex:indoor_air_quality ;
+  ex:hasInterface     ex:I2C ;
+  ex:vccMin "1.6"^^xsd:decimal ;
+  ex:vccMax "1.9"^^xsd:decimal ;
+  ex:i2cAddrDefault "0x58" ;
+  ex:offerPrice "3.576"^^xsd:decimal ;
+  ex:priceCurrency "USD" ;
+  ex:notes "Indoor air quality" .
+
+ex:HMC5883L_Magnetometer a ex:SensorPart ;
+  rdfs:label "HMC5883L Magnetometer" ;
+  ex:partKind "magnetometer" ;
+  ex:manufacturer "Honeywell" ;
+  ex:mpn "HMC5883L" ;
+  sosa:observesProperty ex:magnetic_field ;
+  sosa:hasFeatureOfInterest ex:magnetic_north ;
+  ex:hasInterface     ex:I2C ;
+  ex:vccMin "2.1"^^xsd:decimal ;
+  ex:vccMax "3.6"^^xsd:decimal ;
+  ex:i2cAddrDefault "0x1E" ;
+  ex:offerPrice "9.378"^^xsd:decimal ;
+  ex:priceCurrency "USD" ;
+  ex:notes "Digital Compass" .
+
+ex:TCS34725_RGB_Color a ex:SensorPart ;
+  rdfs:label "TCS34725 RGB Color" ;
+  ex:partKind "color" ;
+  ex:manufacturer "AMS" ;
+  ex:mpn "TCS34725" ;
+  sosa:observesProperty ex:color ;
+  sosa:observesProperty ex:illuminance ;
+  sosa:hasFeatureOfInterest ex:surface_color ;
+  ex:hasInterface     ex:I2C ;
+  ex:vccMin "3.3"^^xsd:decimal ;
+  ex:vccMax "3.3"^^xsd:decimal ;
+  ex:i2cAddrDefault "0x29" ;
+  ex:offerPrice "1.842"^^xsd:decimal ;
+  ex:priceCurrency "EUR" ;
+  ex:notes "IR filter included" .
+
+ex:MAX30102_Pulse_Oximeter a ex:SensorPart ;
+  rdfs:label "MAX30102 Pulse Oximeter" ;
+  ex:partKind "biometric" ;
+  ex:manufacturer "Maxim" ;
+  ex:mpn "MAX30102" ;
+  sosa:observesProperty ex:heart_rate ;
+  sosa:observesProperty ex:spo2 ;
+  sosa:hasFeatureOfInterest ex:human_finger ;
+  ex:hasInterface     ex:I2C ;
+  ex:vccMin "1.8"^^xsd:decimal ;
+  ex:vccMax "3.3"^^xsd:decimal ;
+  ex:i2cAddrDefault "0x57" ;
+  ex:offerPrice "4.7801"^^xsd:decimal ;
+  ex:priceCurrency "USD" ;
+  ex:notes "Heart rate & oxygen" .
+
+ex:VL53L1X_Long_Range_ToF a ex:SensorPart ;
+  rdfs:label "VL53L1X Long Range ToF" ;
+  ex:partKind "distance" ;
+  ex:manufacturer "STMicro" ;
+  ex:mpn "VL53L1X" ;
+  sosa:observesProperty ex:distance ;
+  sosa:hasFeatureOfInterest ex:obstacle_proximity ;
+  ex:hasInterface     ex:I2C ;
+  ex:vccMin "2.6"^^xsd:decimal ;
+  ex:vccMax "3.5"^^xsd:decimal ;
+  ex:rangeMax "400.0"^^xsd:decimal ;
+  ex:units "cm" ;
+  ex:offerPrice "12.99"^^xsd:decimal ;
+  ex:priceCurrency "USD" ;
+  ex:notes "Up to 4m range" .
+
+ex:VEML7700_Lux_Sensor a ex:SensorPart ;
+  rdfs:label "VEML7700 Lux Sensor" ;
+  ex:partKind "light" ;
+  ex:manufacturer "Vishay" ;
+  ex:mpn "VEML7700" ;
+  sosa:observesProperty ex:illuminance ;
+  sosa:hasFeatureOfInterest ex:ambient_light ;
+  ex:hasInterface     ex:I2C ;
+  ex:vccMin "2.5"^^xsd:decimal ;
+  ex:vccMax "3.6"^^xsd:decimal ;
+  ex:rangeMax "120000.0"^^xsd:decimal ;
+  ex:units "lux" ;
+  ex:offerPrice "0.43"^^xsd:decimal ;
+  ex:priceCurrency "EUR" .
+
+ex:SHT31_D_Temp_Humidity a ex:SensorPart ;
+  rdfs:label "SHT31-D Temp/Humidity" ;
+  ex:partKind "temp_humidity" ;
+  ex:manufacturer "Sensirion" ;
+  ex:mpn "SHT31-D" ;
+  sosa:observesProperty ex:temperature ;
+  sosa:observesProperty ex:humidity ;
+  sosa:hasFeatureOfInterest ex:room_air ;
+  ex:hasInterface     ex:I2C ;
+  ex:vccMin "2.4"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:accuracy_pct "2.0"^^xsd:decimal ;
+  ex:offerPrice "2.44"^^xsd:decimal ;
+  ex:priceCurrency "USD" .
+
+ex:HX711_Load_Cell_Amp a ex:SensorPart ;
+  rdfs:label "HX711 Load Cell Amp" ;
+  ex:partKind "force" ;
+  ex:manufacturer "Avia" ;
+  ex:mpn "HX711" ;
+  sosa:observesProperty ex:weight ;
+  sosa:observesProperty ex:force ;
+  sosa:hasFeatureOfInterest ex:load_mass ;
+  ex:hasInterface     ex:Digital_2_wire ;
+  ex:vccMin "2.6"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:offerPrice "0.67416"^^xsd:decimal ;
+  ex:priceCurrency "USD" ;
+  ex:notes "24-bit ADC for scales" .
+
+ex:PMSA003_PM2_5_Sensor a ex:SensorPart ;
+  rdfs:label "PMSA003 PM2.5 Sensor" ;
+  ex:partKind "particle" ;
+  ex:manufacturer "Plantower" ;
+  ex:mpn "PMSA003" ;
+  sosa:observesProperty ex:pm2_5 ;
+  sosa:observesProperty ex:pm10 ;
+  sosa:hasFeatureOfInterest ex:air_quality ;
+  ex:hasInterface     ex:UART ;
+  ex:vccMin "5.0"^^xsd:decimal ;
+  ex:vccMax "5.0"^^xsd:decimal ;
+  ex:notes "Laser particle counter" .
+
+ex:Sharp_IR_10_80cm a ex:SensorPart ;
+  rdfs:label "Sharp IR 10-80cm" ;
+  ex:partKind "distance" ;
+  ex:manufacturer "Sharp" ;
+  ex:mpn "GP2Y0A21YK0F" ;
+  sosa:observesProperty ex:distance ;
+  sosa:hasFeatureOfInterest ex:obstacle_proximity ;
+  ex:hasInterface     ex:ADC ;
+  ex:vccMin "4.5"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:rangeMin "10.0"^^xsd:decimal ;
+  ex:rangeMax "80.0"^^xsd:decimal ;
+  ex:units "cm" ;
+  ex:offerPrice "2.211"^^xsd:decimal ;
+  ex:priceCurrency "EUR" .
+
+ex:Inductive_Proximity_Sensor a ex:SensorPart ;
+  rdfs:label "Inductive Proximity Sensor" ;
+  ex:partKind "proximity" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "LJ12A3-4-Z/BX" ;
+  sosa:observesProperty ex:metal_presence ;
+  sosa:hasFeatureOfInterest ex:metal_object ;
+  ex:hasInterface     ex:Digital_NPN ;
+  ex:vccMin "6.0"^^xsd:decimal ;
+  ex:vccMax "36.0"^^xsd:decimal ;
+  ex:rangeMax "4.0"^^xsd:decimal ;
+  ex:units "mm" ;
+  ex:notes "Detects metal only" .
+
+ex:Water_Flow_Sensor_YF_S201 a ex:SensorPart ;
+  rdfs:label "Water Flow Sensor YF-S201" ;
+  ex:partKind "flow" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "YF-S201" ;
+  sosa:observesProperty ex:flow_rate ;
+  sosa:hasFeatureOfInterest ex:water_pipe ;
+  ex:hasInterface     ex:Digital_Pulse ;
+  ex:vccMin "5.0"^^xsd:decimal ;
+  ex:vccMax "18.0"^^xsd:decimal ;
+  ex:rangeMin "1.0"^^xsd:decimal ;
+  ex:rangeMax "30.0"^^xsd:decimal ;
+  ex:units "L/min" .
+
+ex:NTC_Thermistor_10k a ex:SensorPart ;
+  rdfs:label "NTC Thermistor 10k" ;
+  ex:partKind "temperature" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "NTC-10k-3950" ;
+  sosa:observesProperty ex:temperature ;
+  sosa:hasFeatureOfInterest ex:device_temp ;
+  ex:hasInterface     ex:ADC ;
+  ex:vccMin "0.0"^^xsd:decimal ;
+  ex:vccMax "5.0"^^xsd:decimal ;
+  ex:notes "Requires voltage divider" .
+
+ex:NEMA_17_Stepper_Motor a ex:ActuatorPart ;
+  rdfs:label "NEMA 17 Stepper Motor" ;
+  ex:partKind "motor_stepper" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "17HS4401" ;
+  sosa:actsOnProperty   ex:angular_position ;
+  sosa:hasFeatureOfInterest ex:linear_axis ;
+  ex:hasInterface     ex:DRIVEN_BY_DRIVER ;
+  ex:vccMin "12.0"^^xsd:decimal ;
+  ex:vccMax "24.0"^^xsd:decimal ;
+  ex:notes "Bipolar 4-wire" .
+
+ex:A4988_Stepper_Driver a ex:ActuatorPart ;
+  rdfs:label "A4988 Stepper Driver" ;
+  ex:partKind "motor_driver" ;
+  ex:manufacturer "Allegro" ;
+  ex:mpn "A4988" ;
+  sosa:actsOnProperty   ex:motor_step ;
+  sosa:hasFeatureOfInterest ex:stepper_motor ;
+  ex:hasInterface     ex:GPIO_Step_Dir ;
+  ex:vccMin "8.0"^^xsd:decimal ;
+  ex:vccMax "35.0"^^xsd:decimal ;
+  ex:iActive_mA "2000.0"^^xsd:decimal ;
+  ex:offerPrice "0.368"^^xsd:decimal ;
+  ex:priceCurrency "EUR" ;
+  ex:notes "Microstepping driver" .
+
+ex:DRV8825_Stepper_Driver a ex:ActuatorPart ;
+  rdfs:label "DRV8825 Stepper Driver" ;
+  ex:partKind "motor_driver" ;
+  ex:manufacturer "TI" ;
+  ex:mpn "DRV8825" ;
+  sosa:actsOnProperty   ex:motor_step ;
+  sosa:hasFeatureOfInterest ex:stepper_motor ;
+  ex:hasInterface     ex:GPIO_Step_Dir ;
+  ex:vccMin "8.2"^^xsd:decimal ;
+  ex:vccMax "45.0"^^xsd:decimal ;
+  ex:iActive_mA "2500.0"^^xsd:decimal ;
+  ex:offerPrice "126.65"^^xsd:decimal ;
+  ex:priceCurrency "USD" ;
+  ex:notes "1/32 Microstepping" .
+
+ex:Micro_Metal_Gearmotor_50_1 a ex:ActuatorPart ;
+  rdfs:label "Micro Metal Gearmotor 50:1" ;
+  ex:partKind "motor_dc" ;
+  ex:manufacturer "Pololu" ;
+  ex:mpn "3063" ;
+  sosa:actsOnProperty   ex:angular_velocity ;
+  sosa:hasFeatureOfInterest ex:robot_wheel ;
+  ex:hasInterface     ex:DRIVEN_BY_DRIVER ;
+  ex:vccMin "3.0"^^xsd:decimal ;
+  ex:vccMax "9.0"^^xsd:decimal ;
+  ex:offerPrice "1.64"^^xsd:decimal ;
+  ex:priceCurrency "GBP" ;
+  ex:notes "High precision gearbox" .
+
+ex:Solenoid_Valve_12V a ex:ActuatorPart ;
+  rdfs:label "Solenoid Valve 12V" ;
+  ex:partKind "valve" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "Solenoid 1/2\"" ;
+  sosa:actsOnProperty   ex:fluid_flow ;
+  sosa:hasFeatureOfInterest ex:liquid_pipe ;
+  ex:hasInterface     ex:POWER_SWITCHED ;
+  ex:vccMin "12.0"^^xsd:decimal ;
+  ex:vccMax "12.0"^^xsd:decimal ;
+  ex:notes "Normally closed" .
+
+ex:NeoPixel_Jewel_7 a ex:ActuatorPart ;
+  rdfs:label "NeoPixel Jewel 7" ;
+  ex:partKind "led_rgb" ;
+  ex:manufacturer "Adafruit" ;
+  ex:mpn "2226" ;
+  sosa:actsOnProperty   ex:luminous_color ;
+  sosa:actsOnProperty   ex:brightness ;
+  sosa:hasFeatureOfInterest ex:visual_indicator ;
+  ex:hasInterface     ex:Digital_NZR ;
+  ex:vccMin "3.5"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:offerPrice "0.03"^^xsd:decimal ;
+  ex:priceCurrency "USD" .
+
+ex:e_Ink_Display_2_13 a ex:ActuatorPart ;
+  rdfs:label "e-Ink Display 2.13\"" ;
+  ex:partKind "display_epaper" ;
+  ex:manufacturer "Waveshare" ;
+  ex:mpn "2.13inch e-Paper" ;
+  sosa:actsOnProperty   ex:visual_display ;
+  sosa:hasFeatureOfInterest ex:static_info ;
+  ex:hasInterface     ex:SPI ;
+  ex:vccMin "3.3"^^xsd:decimal ;
+  ex:vccMax "3.3"^^xsd:decimal ;
+  ex:offerPrice "7.9652"^^xsd:decimal ;
+  ex:priceCurrency "EUR" ;
+  ex:notes "Low power, retains image" .
+
+ex:LiPo_Battery_3_7V_1200mAh a ex:PowerSupply ;
+  rdfs:label "LiPo Battery 3.7V 1200mAh" ;
+  ex:partKind "battery" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "1200mAh LiPo" ;
+  ex:vccMin "3.0"^^xsd:decimal ;
+  ex:vccMax "4.2"^^xsd:decimal ;
+  ex:notes "JST-PH connector" .
+
+ex:LiPo_Battery_3_7V_500mAh a ex:PowerSupply ;
+  rdfs:label "LiPo Battery 3.7V 500mAh" ;
+  ex:partKind "battery" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "500mAh LiPo" ;
+  ex:vccMin "3.0"^^xsd:decimal ;
+  ex:vccMax "4.2"^^xsd:decimal ;
+  ex:notes "Tiny for wearables" .
+
+ex:Solar_Panel_6V_1W a ex:PowerSupply ;
+  rdfs:label "Solar Panel 6V 1W" ;
+  ex:partKind "solar" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "Solar 6V 1W" ;
+  ex:vccMin "0.0"^^xsd:decimal ;
+  ex:vccMax "7.2"^^xsd:decimal ;
+  ex:notes "Small epoxy panel" .
+
+ex:MT3608_Boost_Converter a ex:PowerSupply ;
+  rdfs:label "MT3608 Boost Converter" ;
+  ex:partKind "regulator" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "MT3608" ;
+  ex:vccMin "2.0"^^xsd:decimal ;
+  ex:vccMax "24.0"^^xsd:decimal ;
+  ex:notes "Step-up only (2A max)" .
+
+ex:CR2032_Coin_Cell_Holder a ex:PowerSupply ;
+  rdfs:label "CR2032 Coin Cell Holder" ;
+  ex:partKind "battery" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "CR2032 Holder" ;
+  ex:vccMin "3.0"^^xsd:decimal ;
+  ex:vccMax "3.0"^^xsd:decimal ;
+  ex:notes "For RTCs or small sensors" .
+
+ex:HC_SR04_Ultrasonic a ex:SensorPart ;
+  rdfs:label "HC-SR04 Ultrasonic" ;
+  ex:partKind "distance" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "HC-SR04" ;
+  sosa:observesProperty ex:distance ;
+  sosa:hasFeatureOfInterest ex:obstacle_proximity ;
+  ex:hasInterface     ex:GPIO_TRIGGER_ECHO ;
+  ex:vccMin "4.5"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:logicLevel "5.0"^^xsd:decimal ;
+  ex:rangeMin "2.0"^^xsd:decimal ;
+  ex:rangeMax "400.0"^^xsd:decimal ;
+  ex:units "cm" .
+
+ex:DHT22_AM2302 a ex:SensorPart ;
+  rdfs:label "DHT22 (AM2302)" ;
+  ex:partKind "temp_humidity" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "DHT22" ;
+  sosa:observesProperty ex:temperature ;
+  sosa:observesProperty ex:humidity ;
+  sosa:hasFeatureOfInterest ex:room_air ;
+  ex:hasInterface     ex:Digital ;
+  ex:vccMin "3.3"^^xsd:decimal ;
+  ex:vccMax "6.0"^^xsd:decimal ;
+  ex:accuracy_pct "2.0"^^xsd:decimal ;
+  ex:rangeMin "-40.0"^^xsd:decimal ;
+  ex:rangeMax "80.0"^^xsd:decimal ;
+  ex:units "degC" .
+
+ex:MG996R_High_Torque_Servo a ex:ActuatorPart ;
+  rdfs:label "MG996R High Torque Servo" ;
+  ex:partKind "motor_servo" ;
+  ex:manufacturer "TowerPro" ;
+  ex:mpn "MG996R" ;
+  sosa:actsOnProperty   ex:angular_position ;
+  sosa:hasFeatureOfInterest ex:robotic_joint ;
+  ex:hasInterface     ex:PWM ;
+  ex:vccMin "4.8"^^xsd:decimal ;
+  ex:vccMax "7.2"^^xsd:decimal ;
+  ex:notes "Metal gear" .
+
+ex:Arduino_Uno_R3 a ex:ControllerBoard ;
+  rdfs:label "Arduino Uno R3" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "Arduino" ;
+  ex:mpn "A000066" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:ADC ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "7.0"^^xsd:decimal ;
+  ex:vccMax "12.0"^^xsd:decimal ;
+  ex:logicLevel "5.0"^^xsd:decimal ;
+  ex:offerPrice "17.23"^^xsd:decimal ;
+  ex:priceCurrency "GBP" ;
+  ex:notes "The standard starter board" .
+
+ex:Arduino_Nano a ex:ControllerBoard ;
+  rdfs:label "Arduino Nano" ;
+  ex:partKind "arduino" ;
+  ex:manufacturer "Arduino" ;
+  ex:mpn "A000005" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:ADC ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "7.0"^^xsd:decimal ;
+  ex:vccMax "12.0"^^xsd:decimal ;
+  ex:logicLevel "5.0"^^xsd:decimal ;
+  ex:offerPrice "16.49"^^xsd:decimal ;
+  ex:priceCurrency "GBP" ;
+  ex:notes "Breadboard friendly" .
+
+ex:ESP32_DevKitC a ex:ControllerBoard ;
+  rdfs:label "ESP32 DevKitC" ;
+  ex:partKind "esp32" ;
+  ex:manufacturer "Espressif" ;
+  ex:mpn "ESP32-DevKitC" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:I2S ;
+  ex:hasInterface     ex:ADC ;
+  ex:hasInterface     ex:DAC ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "2.2"^^xsd:decimal ;
+  ex:vccMax "3.6"^^xsd:decimal ;
+  ex:logicLevel "3.3"^^xsd:decimal ;
+  ex:offerPrice "8.76"^^xsd:decimal ;
+  ex:priceCurrency "USD" ;
+  ex:notes "WiFi + BT LE" .
+
+ex:ESP8266_NodeMCU a ex:ControllerBoard ;
+  rdfs:label "ESP8266 NodeMCU" ;
+  ex:partKind "esp8266" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "NodeMCU v2" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:ADC ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "2.5"^^xsd:decimal ;
+  ex:vccMax "3.6"^^xsd:decimal ;
+  ex:logicLevel "3.3"^^xsd:decimal ;
+  ex:notes "Cheap WiFi" .
+
+ex:Raspberry_Pi_4_Model_B a ex:ControllerBoard ;
+  rdfs:label "Raspberry Pi 4 Model B" ;
+  ex:partKind "sbc" ;
+  ex:manufacturer "Raspberry Pi" ;
+  ex:mpn "RPI4-MODBP" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:GPIO ;
+  ex:hasInterface     ex:HDMI ;
+  ex:hasInterface     ex:USB ;
+  ex:vccMin "5.0"^^xsd:decimal ;
+  ex:vccMax "5.25"^^xsd:decimal ;
+  ex:logicLevel "3.3"^^xsd:decimal ;
+  ex:offerPrice "25.64"^^xsd:decimal ;
+  ex:priceCurrency "GBP" ;
+  ex:notes "Linux SBC" .
+
+ex:Raspberry_Pi_Pico a ex:ControllerBoard ;
+  rdfs:label "Raspberry Pi Pico" ;
+  ex:partKind "microcontroller" ;
+  ex:manufacturer "Raspberry Pi" ;
+  ex:mpn "SC0915" ;
+  ex:hasInterface     ex:UART ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:hasInterface     ex:ADC ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "1.8"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:logicLevel "3.3"^^xsd:decimal ;
+  ex:offerPrice "3.05"^^xsd:decimal ;
+  ex:priceCurrency "GBP" ;
+  ex:notes "RP2040 Dual Core M0+" .
+
+ex:DHT11_Temp_Humidity a ex:SensorPart ;
+  rdfs:label "DHT11 Temp/Humidity" ;
+  ex:partKind "temp_humidity" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "DHT11" ;
+  sosa:observesProperty ex:temperature ;
+  sosa:observesProperty ex:humidity ;
+  sosa:hasFeatureOfInterest ex:room_air ;
+  ex:hasInterface     ex:Digital ;
+  ex:vccMin "3.5"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:accuracy_pct "5.0"^^xsd:decimal ;
+  ex:rangeMin "0.0"^^xsd:decimal ;
+  ex:rangeMax "50.0"^^xsd:decimal ;
+  ex:units "degC" .
+
+ex:BMP180_Barometer a ex:SensorPart ;
+  rdfs:label "BMP180 Barometer" ;
+  ex:partKind "pressure" ;
+  ex:manufacturer "Bosch" ;
+  ex:mpn "BMP180" ;
+  sosa:observesProperty ex:pressure ;
+  sosa:observesProperty ex:temperature ;
+  sosa:hasFeatureOfInterest ex:room_air ;
+  ex:hasInterface     ex:I2C ;
+  ex:vccMin "1.8"^^xsd:decimal ;
+  ex:vccMax "3.6"^^xsd:decimal ;
+  ex:i2cAddrDefault "0x77" ;
+  ex:offerPrice "5.9071"^^xsd:decimal ;
+  ex:priceCurrency "USD" .
+
+ex:DS18B20_Temp_Probe a ex:SensorPart ;
+  rdfs:label "DS18B20 Temp Probe" ;
+  ex:partKind "temperature" ;
+  ex:manufacturer "Dallas" ;
+  ex:mpn "DS18B20" ;
+  sosa:observesProperty ex:temperature ;
+  sosa:hasFeatureOfInterest ex:liquid ;
+  ex:hasInterface     ex:OneWire ;
+  ex:vccMin "3.0"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:rangeMin "-55.0"^^xsd:decimal ;
+  ex:rangeMax "125.0"^^xsd:decimal ;
+  ex:units "degC" ;
+  ex:offerPrice "1.75"^^xsd:decimal ;
+  ex:priceCurrency "USD" ;
+  ex:notes "Waterproof available" .
+
+ex:TMP36_Analog_Temp a ex:SensorPart ;
+  rdfs:label "TMP36 Analog Temp" ;
+  ex:partKind "temperature" ;
+  ex:manufacturer "Analog Devices" ;
+  ex:mpn "TMP36" ;
+  sosa:observesProperty ex:temperature ;
+  sosa:hasFeatureOfInterest ex:pcb ;
+  sosa:hasFeatureOfInterest ex:device ;
+  ex:hasInterface     ex:ADC ;
+  ex:vccMin "2.7"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:offerPrice "0.54"^^xsd:decimal ;
+  ex:priceCurrency "USD" ;
+  ex:notes "Simple analog output" .
+
+ex:CCS811_Air_Quality a ex:SensorPart ;
+  rdfs:label "CCS811 Air Quality" ;
+  ex:partKind "gas" ;
+  ex:manufacturer "AMS" ;
+  ex:mpn "CCS811" ;
+  sosa:observesProperty ex:eCO2 ;
+  sosa:observesProperty ex:TVOC ;
+  sosa:hasFeatureOfInterest ex:room_air ;
+  ex:hasInterface     ex:I2C ;
+  ex:vccMin "1.8"^^xsd:decimal ;
+  ex:vccMax "3.3"^^xsd:decimal ;
+  ex:i2cAddrDefault "0x5A" .
+
+ex:MQ_2_Gas_Sensor a ex:SensorPart ;
+  rdfs:label "MQ-2 Gas Sensor" ;
+  ex:partKind "gas" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "MQ-2" ;
+  sosa:observesProperty ex:smoke ;
+  sosa:observesProperty ex:lpg ;
+  sosa:observesProperty ex:propane ;
+  sosa:hasFeatureOfInterest ex:room_air ;
+  ex:hasInterface     ex:ADC ;
+  ex:hasInterface     ex:Digital ;
+  ex:vccMin "5.0"^^xsd:decimal ;
+  ex:vccMax "5.0"^^xsd:decimal ;
+  ex:notes "Heater needs warmup" .
+
+ex:HC_SR501_PIR a ex:SensorPart ;
+  rdfs:label "HC-SR501 PIR" ;
+  ex:partKind "motion" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "HC-SR501" ;
+  sosa:observesProperty ex:motion ;
+  sosa:hasFeatureOfInterest ex:human_presence ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "4.5"^^xsd:decimal ;
+  ex:vccMax "20.0"^^xsd:decimal ;
+  ex:logicLevel "3.3"^^xsd:decimal ;
+  ex:notes "Infrared motion" .
+
+ex:VL53L0X_ToF a ex:SensorPart ;
+  rdfs:label "VL53L0X ToF" ;
+  ex:partKind "distance" ;
+  ex:manufacturer "STMicro" ;
+  ex:mpn "VL53L0X" ;
+  sosa:observesProperty ex:distance ;
+  sosa:hasFeatureOfInterest ex:obstacle_proximity ;
+  ex:hasInterface     ex:I2C ;
+  ex:vccMin "2.6"^^xsd:decimal ;
+  ex:vccMax "3.5"^^xsd:decimal ;
+  ex:i2cAddrDefault "0x29" ;
+  ex:rangeMax "200.0"^^xsd:decimal ;
+  ex:units "cm" ;
+  ex:offerPrice "7.7013"^^xsd:decimal ;
+  ex:priceCurrency "USD" ;
+  ex:notes "Laser Time-of-Flight" .
+
+ex:MPU_6050_IMU a ex:SensorPart ;
+  rdfs:label "MPU-6050 IMU" ;
+  ex:partKind "imu" ;
+  ex:manufacturer "InvenSense" ;
+  ex:mpn "MPU-6050" ;
+  sosa:observesProperty ex:acceleration ;
+  sosa:observesProperty ex:angular_velocity ;
+  sosa:hasFeatureOfInterest ex:device_orientation ;
+  ex:hasInterface     ex:I2C ;
+  ex:vccMin "2.3"^^xsd:decimal ;
+  ex:vccMax "3.4"^^xsd:decimal ;
+  ex:i2cAddrDefault "0x68" ;
+  ex:offerPrice "3.439"^^xsd:decimal ;
+  ex:priceCurrency "EUR" ;
+  ex:notes "6-DOF" .
+
+ex:ADXL345_Accelerometer a ex:SensorPart ;
+  rdfs:label "ADXL345 Accelerometer" ;
+  ex:partKind "accelerometer" ;
+  ex:manufacturer "Analog Devices" ;
+  ex:mpn "ADXL345" ;
+  sosa:observesProperty ex:acceleration ;
+  sosa:hasFeatureOfInterest ex:device_motion ;
+  ex:hasInterface     ex:I2C ;
+  ex:hasInterface     ex:SPI ;
+  ex:vccMin "2.0"^^xsd:decimal ;
+  ex:vccMax "3.6"^^xsd:decimal ;
+  ex:i2cAddrDefault "0x53" ;
+  ex:offerPrice "1.0"^^xsd:decimal ;
+  ex:priceCurrency "USD" .
+
+ex:LDR_Photoresistor a ex:SensorPart ;
+  rdfs:label "LDR Photoresistor" ;
+  ex:partKind "light" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "GL5528" ;
+  sosa:observesProperty ex:illuminance ;
+  sosa:hasFeatureOfInterest ex:ambient_light ;
+  ex:hasInterface     ex:ADC ;
+  ex:vccMin "0.0"^^xsd:decimal ;
+  ex:vccMax "100.0"^^xsd:decimal ;
+  ex:notes "Passive component" .
+
+ex:TSL2561_Lux_Sensor a ex:SensorPart ;
+  rdfs:label "TSL2561 Lux Sensor" ;
+  ex:partKind "light" ;
+  ex:manufacturer "AMS" ;
+  ex:mpn "TSL2561" ;
+  sosa:observesProperty ex:illuminance ;
+  sosa:hasFeatureOfInterest ex:ambient_light ;
+  ex:hasInterface     ex:I2C ;
+  ex:vccMin "2.7"^^xsd:decimal ;
+  ex:vccMax "3.6"^^xsd:decimal ;
+  ex:i2cAddrDefault "0x39" ;
+  ex:offerPrice "1.474"^^xsd:decimal ;
+  ex:priceCurrency "EUR" .
+
+ex:Capacitive_Touch_TTP223 a ex:SensorPart ;
+  rdfs:label "Capacitive Touch TTP223" ;
+  ex:partKind "touch" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "TTP223" ;
+  sosa:observesProperty ex:touch ;
+  sosa:hasFeatureOfInterest ex:user_input ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "2.0"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:notes "Single pad" .
+
+ex:INA219_Current_Sensor a ex:SensorPart ;
+  rdfs:label "INA219 Current Sensor" ;
+  ex:partKind "current" ;
+  ex:manufacturer "TI" ;
+  ex:mpn "INA219" ;
+  sosa:observesProperty ex:current ;
+  sosa:observesProperty ex:voltage ;
+  sosa:observesProperty ex:power ;
+  sosa:hasFeatureOfInterest ex:circuit_power ;
+  ex:hasInterface     ex:I2C ;
+  ex:vccMin "3.0"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:i2cAddrDefault "0x40" ;
+  ex:offerPrice "0.295"^^xsd:decimal ;
+  ex:priceCurrency "EUR" ;
+  ex:notes "High side measure" .
+
+ex:SG90_Micro_Servo a ex:ActuatorPart ;
+  rdfs:label "SG90 Micro Servo" ;
+  ex:partKind "motor_servo" ;
+  ex:manufacturer "TowerPro" ;
+  ex:mpn "SG90" ;
+  sosa:actsOnProperty   ex:angular_position ;
+  sosa:hasFeatureOfInterest ex:mechanical_arm ;
+  ex:hasInterface     ex:PWM ;
+  ex:vccMin "4.8"^^xsd:decimal ;
+  ex:vccMax "6.0"^^xsd:decimal ;
+  ex:rangeMin "0.0"^^xsd:decimal ;
+  ex:rangeMax "180.0"^^xsd:decimal ;
+  ex:units "deg" ;
+  ex:offerPrice "0.147"^^xsd:decimal ;
+  ex:priceCurrency "EUR" .
+
+ex:28BYJ_48_Stepper_ULN2003 a ex:ActuatorPart ;
+  rdfs:label "28BYJ-48 Stepper + ULN2003" ;
+  ex:partKind "motor_stepper" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "28BYJ-48" ;
+  sosa:actsOnProperty   ex:angular_position ;
+  sosa:hasFeatureOfInterest ex:precision_drive ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "5.0"^^xsd:decimal ;
+  ex:vccMax "5.0"^^xsd:decimal ;
+  ex:notes "4-phase 5-wire" .
+
+ex:L298N_Motor_Driver a ex:ActuatorPart ;
+  rdfs:label "L298N Motor Driver" ;
+  ex:partKind "motor_driver" ;
+  ex:manufacturer "STMicro" ;
+  ex:mpn "L298N Module" ;
+  sosa:actsOnProperty   ex:motor_velocity ;
+  sosa:hasFeatureOfInterest ex:dc_motor ;
+  ex:hasInterface     ex:GPIO ;
+  ex:hasInterface     ex:PWM ;
+  ex:vccMin "5.0"^^xsd:decimal ;
+  ex:vccMax "35.0"^^xsd:decimal ;
+  ex:iActive_mA "2000.0"^^xsd:decimal .
+
+ex:TB6612FNG_Driver a ex:ActuatorPart ;
+  rdfs:label "TB6612FNG Driver" ;
+  ex:partKind "motor_driver" ;
+  ex:manufacturer "Toshiba" ;
+  ex:mpn "TB6612FNG" ;
+  sosa:actsOnProperty   ex:motor_velocity ;
+  sosa:hasFeatureOfInterest ex:dc_motor ;
+  ex:hasInterface     ex:GPIO ;
+  ex:hasInterface     ex:PWM ;
+  ex:vccMin "4.5"^^xsd:decimal ;
+  ex:vccMax "13.5"^^xsd:decimal ;
+  ex:iActive_mA "1200.0"^^xsd:decimal ;
+  ex:offerPrice "0.30863"^^xsd:decimal ;
+  ex:priceCurrency "USD" ;
+  ex:notes "Efficient dual H-bridge" .
+
+ex:SSD1306_OLED_128x64 a ex:ActuatorPart ;
+  rdfs:label "SSD1306 OLED 128x64" ;
+  ex:partKind "display_oled" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "SSD1306" ;
+  sosa:actsOnProperty   ex:visual_display ;
+  sosa:hasFeatureOfInterest ex:user_interface ;
+  ex:hasInterface     ex:I2C ;
+  ex:vccMin "3.3"^^xsd:decimal ;
+  ex:vccMax "5.0"^^xsd:decimal ;
+  ex:i2cAddrDefault "0x3C" .
+
+ex:16x2_LCD_I2C a ex:ActuatorPart ;
+  rdfs:label "16x2 LCD (I2C)" ;
+  ex:partKind "display_lcd" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "HD44780+PCF8574" ;
+  sosa:actsOnProperty   ex:visual_display ;
+  sosa:hasFeatureOfInterest ex:user_interface ;
+  ex:hasInterface     ex:I2C ;
+  ex:vccMin "4.5"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:i2cAddrDefault "0x27" .
+
+ex:WS2812B_RGB_LED a ex:ActuatorPart ;
+  rdfs:label "WS2812B RGB LED" ;
+  ex:partKind "led_rgb" ;
+  ex:manufacturer "Worldsemi" ;
+  ex:mpn "WS2812B" ;
+  sosa:actsOnProperty   ex:color ;
+  sosa:actsOnProperty   ex:brightness ;
+  sosa:hasFeatureOfInterest ex:indicator_light ;
+  ex:hasInterface     ex:Digital_NZR ;
+  ex:vccMin "3.5"^^xsd:decimal ;
+  ex:vccMax "5.3"^^xsd:decimal ;
+  ex:offerPrice "0.10358"^^xsd:decimal ;
+  ex:priceCurrency "USD" ;
+  ex:notes "Neopixel compatible" .
+
+ex:Relay_Module_1_Ch a ex:ActuatorPart ;
+  rdfs:label "Relay Module 1-Ch" ;
+  ex:partKind "relay" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "Relay 5V" ;
+  sosa:actsOnProperty   ex:power_state ;
+  sosa:hasFeatureOfInterest ex:appliance_power ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "5.0"^^xsd:decimal ;
+  ex:vccMax "5.0"^^xsd:decimal ;
+  ex:notes "Optoisolated" .
+
+ex:Active_Buzzer a ex:ActuatorPart ;
+  rdfs:label "Active Buzzer" ;
+  ex:partKind "buzzer" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "Active Buzzer" ;
+  sosa:actsOnProperty   ex:sound ;
+  sosa:hasFeatureOfInterest ex:alarm_signal ;
+  ex:hasInterface     ex:GPIO ;
+  ex:vccMin "3.3"^^xsd:decimal ;
+  ex:vccMax "5.0"^^xsd:decimal .
+
+ex:LM2596_Buck_Converter a ex:PowerSupply ;
+  rdfs:label "LM2596 Buck Converter" ;
+  ex:partKind "regulator" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "LM2596" ;
+  ex:vccMin "3.2"^^xsd:decimal ;
+  ex:vccMax "40.0"^^xsd:decimal ;
+  ex:notes "Step-down, adjustable" .
+
+ex:AMS1117_3_3_LDO a ex:PowerSupply ;
+  rdfs:label "AMS1117-3.3 LDO" ;
+  ex:partKind "regulator" ;
+  ex:manufacturer "AMS" ;
+  ex:mpn "AMS1117-3.3" ;
+  ex:vccMin "4.5"^^xsd:decimal ;
+  ex:vccMax "15.0"^^xsd:decimal ;
+  ex:offerPrice "0.03637"^^xsd:decimal ;
+  ex:priceCurrency "USD" ;
+  ex:notes "3.3V fixed output" .
+
+ex:TP4056_LiPo_Charger a ex:PowerSupply ;
+  rdfs:label "TP4056 LiPo Charger" ;
+  ex:partKind "charger" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "TP4056" ;
+  ex:hasInterface     ex:USB ;
+  ex:vccMin "4.5"^^xsd:decimal ;
+  ex:vccMax "5.5"^^xsd:decimal ;
+  ex:notes "1A charging current" .
+
+ex:9V_Battery_Clip a ex:PowerSupply ;
+  rdfs:label "9V Battery Clip" ;
+  ex:partKind "battery" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "Clip-9V" ;
+  ex:vccMin "9.0"^^xsd:decimal ;
+  ex:vccMax "9.0"^^xsd:decimal .
+
+ex:18650_Battery_Holder a ex:PowerSupply ;
+  rdfs:label "18650 Battery Holder" ;
+  ex:partKind "battery" ;
+  ex:manufacturer "Generic" ;
+  ex:mpn "Holder-18650" ;
+  ex:vccMin "3.7"^^xsd:decimal ;
+  ex:vccMax "4.2"^^xsd:decimal .
