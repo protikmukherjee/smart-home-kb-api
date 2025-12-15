@@ -1,0 +1,69 @@
+@prefix ex:   <https://example.org/iotkb#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/iotkb> a owl:Ontology ;
+  rdfs:label "IoT Knowledge Base Schema v3" ;
+  owl:imports <http://www.w3.org/ns/sosa/> .
+
+# --- 1. Taxonomic Classes (The 6 Pillars) ---
+ex:Part           a owl:Class .
+ex:SensorPart     a owl:Class ; rdfs:subClassOf ex:Part, sosa:Sensor .
+ex:ActuatorPart   a owl:Class ; rdfs:subClassOf ex:Part, sosa:Actuator .
+ex:ControllerBoard a owl:Class ; rdfs:subClassOf ex:Part .
+ex:PowerSupply    a owl:Class ; rdfs:subClassOf ex:Part .
+ex:Mechanical     a owl:Class ; rdfs:subClassOf ex:Part .
+ex:Tooling        a owl:Class ; rdfs:subClassOf ex:Part .
+
+# --- 2. Interfaces ---
+ex:Interface      a owl:Class .
+ex:hasInterface   a owl:ObjectProperty ;
+                  rdfs:domain ex:Part ;
+                  rdfs:range ex:Interface .
+
+# --- 3. SOSA Semantic Properties (Re-declared for local clarity) ---
+sosa:observesProperty a owl:ObjectProperty .
+sosa:actsOnProperty   a owl:ObjectProperty .
+sosa:hasFeatureOfInterest a owl:ObjectProperty .
+
+# --- 4. Identity Properties ---
+ex:partKind         a owl:DatatypeProperty ; rdfs:range xsd:string .
+ex:manufacturer     a owl:DatatypeProperty ; rdfs:range xsd:string .
+ex:mpn              a owl:DatatypeProperty ; rdfs:range xsd:string .
+
+# --- 5. Electrical Specification ---
+ex:vccMin           a owl:DatatypeProperty ; rdfs:range xsd:decimal .
+ex:vccMax           a owl:DatatypeProperty ; rdfs:range xsd:decimal .
+ex:logicLevel       a owl:DatatypeProperty ; rdfs:range xsd:decimal . # NEW
+ex:iActive_mA       a owl:DatatypeProperty ; rdfs:range xsd:decimal .
+ex:iIdle_uA         a owl:DatatypeProperty ; rdfs:range xsd:decimal .
+
+# --- 6. Physical Specification ---
+ex:packageCase      a owl:DatatypeProperty ; rdfs:range xsd:string .  # NEW
+ex:pinCount         a owl:DatatypeProperty ; rdfs:range xsd:integer . # NEW
+ex:tempMinC         a owl:DatatypeProperty ; rdfs:range xsd:decimal . # NEW
+ex:tempMaxC         a owl:DatatypeProperty ; rdfs:range xsd:decimal . # NEW
+
+# --- 7. Interface Details ---
+ex:i2cAddrDefault   a owl:DatatypeProperty ; rdfs:range xsd:string .
+ex:i2cAddrRange     a owl:DatatypeProperty ; rdfs:range xsd:string .
+ex:spiMaxFreq_MHz   a owl:DatatypeProperty ; rdfs:range xsd:decimal .
+ex:uartBaud         a owl:DatatypeProperty ; rdfs:range xsd:string .
+
+# --- 8. Performance Specs ---
+ex:sampleRateMax_Hz a owl:DatatypeProperty ; rdfs:range xsd:decimal .
+ex:latency_ms       a owl:DatatypeProperty ; rdfs:range xsd:decimal .
+ex:accuracy_pct     a owl:DatatypeProperty ; rdfs:range xsd:decimal .
+ex:rangeMin         a owl:DatatypeProperty ; rdfs:range xsd:decimal .
+ex:rangeMax         a owl:DatatypeProperty ; rdfs:range xsd:decimal .
+ex:units            a owl:DatatypeProperty ; rdfs:range xsd:string .
+
+# --- 9. Metadata ---
+ex:datasheetURL     a owl:DatatypeProperty ; rdfs:range xsd:anyURI .
+ex:productURL       a owl:DatatypeProperty ; rdfs:range xsd:anyURI .
+ex:offerPrice       a owl:DatatypeProperty ; rdfs:range xsd:decimal .
+ex:priceCurrency    a owl:DatatypeProperty ; rdfs:range xsd:string .
+ex:lifecycle        a owl:DatatypeProperty ; rdfs:range xsd:string .
+ex:notes            a owl:DatatypeProperty ; rdfs:range xsd:string .
