@@ -1,0 +1,15 @@
+node_modules/
+.next/
+out/
+dist/
+
+.env
+.env.local
+.env.*.local
+
+backend/.env
+backend/firebase_creds.json
+backend/dist/
+backend/node_modules/
+
+*.log

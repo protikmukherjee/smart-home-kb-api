@@ -1,8 +1,15 @@
-cat > .gitignore <<'EOF'
 .venv/
+venv/
 __pycache__/
 *.pyc
 .env
 .env.*
 .DS_Store
-EOF
+node_modules/
+.next/
+dist/
+*.zip
+Protégé.app/
+*.app/
+# Large duplicate PDF (96MB, exceeds GitHub limit)
+MODELS Paper Literature Review/Related Works/Papers/1-s2.0-S2452414X21000790-main 2.pdf

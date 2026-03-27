@@ -1,0 +1,53 @@
+{
+    "systems": [
+        {
+            "name": "Garage Door",
+            "type": "Component_System",
+            "physical entities": [
+                {
+                    "name": "Physical Entity",
+                    "physical entities": [],
+                    "controllers": [
+                        {
+                            "name": "Controller",
+                            "logic unit": "Garage_Door",
+                            "devices": [
+                                {
+                                    "device type": "actuator",
+                                    "name": "Actuator",
+                                    "type": "Motor"
+                                },
+                                {
+                                    "device type": "sensor",
+                                    "name": "Ultrasonic Sensor",
+                                    "type": "Ultrasonic_Sensor"
+                                },
+                                {
+                                    "device type": "tag",
+                                    "name": "Tag",
+                                    "type": "NFC"
+                                }
+                            ],
+                            "network devices": [
+                                {
+                                    "name": "WiFi",
+                                    "type": "WiFi"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Smar Home Hub",
+            "type": "Component_System",
+            "physical entities": []
+        },
+        {
+            "name": "System",
+            "type": "Component_System",
+            "physical entities": []
+        }
+    ]
+}

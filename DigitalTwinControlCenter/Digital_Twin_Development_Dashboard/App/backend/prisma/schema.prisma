@@ -1,0 +1,82 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Account {
+  id        String   @id @default(cuid())
+  name      String   @default("Base Account")
+  createdAt DateTime @default(now())
+  systems   System[]
+  runtimeSetup RuntimeSetupConfig?
+}
+
+model System {
+  id         String             @id @default(cuid())
+  accountId  String
+  name       String
+  createdAt  DateTime           @default(now())
+  latestConfig String?
+  latestConfigAt DateTime?
+  sourceJson Json?
+  account    Account            @relation(fields: [accountId], references: [id])
+  components SystemComponent[]
+  selections ComponentSelection[]
+  deployedSystem DeployedSystem?
+}
+
+model DeployedSystem {
+  id             String   @id @default(cuid())
+  sourceSystemId String   @unique
+  name           String
+  displayName    String
+  description    String
+  icon           String?
+  mainClass      String?
+  dependencies   Json
+  definition     Json
+  realtimeConfig Json
+  simulationConfig Json
+  isActive       Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  sourceSystem   System   @relation(fields: [sourceSystemId], references: [id])
+}
+
+model RuntimeSetupConfig {
+  id         String   @id @default(cuid())
+  accountId  String   @unique
+  realtime   Json
+  simulation Json
+  reasoning  Json?
+  activeSystems Json?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  account    Account  @relation(fields: [accountId], references: [id])
+}
+
+model SystemComponent {
+  id         String   @id @default(cuid())
+  systemId   String
+  name       String
+  deviceType String
+  createdAt  DateTime @default(now())
+  system     System  @relation(fields: [systemId], references: [id])
+}
+
+model ComponentSelection {
+  id              String   @id @default(cuid())
+  systemId        String
+  componentName   String
+  variantId       String
+  variantSnapshot Json
+  pins            Json?
+  pinType         String
+  componentId     String
+  createdAt       DateTime @default(now())
+  system          System   @relation(fields: [systemId], references: [id])
+}

@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --surface: #f6f7fb;
+  --ink: #111827;
+  --cobalt: #1d4ed8;
+  --haze: #e2e8f0;
+  --ember: #d97706;
+
+  --background: #f5f7fb;
+  --foreground: #111827;
+  --card: #ffffff;
+  --card-foreground: #111827;
+  --primary: #1d4ed8;
+  --primary-foreground: #ffffff;
+  --secondary: #e2e8f0;
+  --secondary-foreground: #111827;
+  --muted: #f6f7fb;
+  --muted-foreground: #6b7280;
+  --accent: #f6f7fb;
+  --accent-foreground: #111827;
+  --destructive: #b91c1c;
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #1d4ed8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-ink: var(--ink);
+  --color-cobalt: var(--cobalt);
+  --color-haze: var(--haze);
+  --color-mist: var(--surface);
+  --color-ember: var(--ember);
+  --color-surface: var(--surface);
+
+  --font-sans: var(--font-space);
+  --font-display: var(--font-syne);
+  --color-border: var(--border);
+}
+
+body {
+  background: #f5f7fb;
+  color: var(--ink);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+}
